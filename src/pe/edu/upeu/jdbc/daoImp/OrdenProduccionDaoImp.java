@@ -26,8 +26,8 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 
 	@Override
 	public int create(OrdenProduccion r) {
-		String sql = "{call SP_REGISTRAROP (?,?,?)}";
-		return jdbcTemplate.update(sql, r.getIdusuario(), r.getFgeneracion(), r.getFentrega());
+		String sql = "{call SP_REGISTRAROP (?)}";
+		return jdbcTemplate.update(sql, r.getIdusuario());
 	}
 
 	@Override

@@ -1,9 +1,11 @@
 package pe.edu.upeu.jdbc.controller;
 
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -57,9 +59,13 @@ public class OpController {
 	}
 	
 	@PostMapping("/opregistration")
-	public String opregistration(Model model, OrdenProduccion op) throws SQLException {
-		op.setEstado(1);
-		//op.setIdusuario(Sessio);
+	public String opregistration(Model model, OrdenProduccion op, HttpSession session) throws SQLException {
+		System.out.println(session.getAttribute("iduser").getClass());
+		int idusr = session.getAttribute("iduser");
+		System.out.println(idusr);
+		op.setIdusuario(idusr);
+		System.out.println((int) session.getAttribute("iduser"));
+		
 		opp.create(op);
 		//JOptionPane.showMessageDialog(null, op.getFentrega());
 		//ModelAndView mu = new ModelAndView();
