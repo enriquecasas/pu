@@ -43,4 +43,10 @@ public class OrdenProduccionServiceImp implements OrdenProduccionService {
 		return ordenProduccionDao.readAllop();
 	}
 
+	@Override
+	public List<Map<String, Object>> getLast() {
+		// TODO Auto-generated method stub
+		return ordenProduccionDao.getLast();
+	}
+
 }

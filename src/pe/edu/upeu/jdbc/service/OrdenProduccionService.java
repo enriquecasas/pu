@@ -11,4 +11,5 @@ public interface OrdenProduccionService {
 	int delete(int id);
 	OrdenProduccion read(int id);
 	List<Map<String, Object>> readAllop();
+	List<Map<String, Object>> getLast();
 }

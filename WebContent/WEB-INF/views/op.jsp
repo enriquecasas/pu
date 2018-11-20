@@ -63,32 +63,6 @@ boto -->
 					<div class="card">
 						<form action="opregistration" method="post">
 							<div class="app-breadcrumb breadcrumb " style="">
-
-								<div class="col-auto">
-									<label>Fecha Actual</label>
-								</div>
-								<div class="col-xs-1">
-									<input id="datepicker" name="fgeneracion" width="150" />
-=======
-		
-								<div class="col-auto">
-									<label>Fecha Actual <span>${user}</span><span>${iduser}</span></label>
-								</div>
-								<div class="col-xs-1">
-									<input id="datepicker" name="" width="150" />
->>>>>>> c0d8f81ef07e15e91120717a4e7b611e09e2adec
-								</div>
-								<div class="col-auto">
-									<label for="">Fecha Entrega</label>
-								</div>
-								<div class="col-xs-1">
-<<<<<<< HEAD
-									<input id="datepicker2" name="fentrega" width="150" />
-=======
-									<input id="datepicker2" name="" width="150" />
->>>>>>> c0d8f81ef07e15e91120717a4e7b611e09e2adec
-								</div>
-
 								<div class="col-auto">
 									<div class="for-group">
 										<input type="submit" class="btn btn-primary fa fa-plus" value="+*+">

@@ -28,7 +28,6 @@ public class MainController {
 		if (!usp.validaUser(user).isEmpty()) {			
 			session.setAttribute("user", user.getNomuser());	
 			session.setAttribute("iduser", usp.validaUser(user).get(0).values().toArray()[0]);
-			//JOptionPane.showMessageDialog(null,  user.getEstado());
 			return "main";
 		} else {
 			return "index";

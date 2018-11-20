@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import pe.edu.upeu.jdbc.entity.OrdenProduccion;
 import pe.edu.upeu.jdbc.service.OrdenProduccionService;
 import pe.edu.upeu.jdbc.service.ProductoService;
@@ -25,7 +24,7 @@ public class OpController {
 	private OrdenProduccionService opp;
 	@Autowired
 	private ProductoService pro;
-	
+
 	@GetMapping("/op")
 	public ModelAndView op(Model model) {
 		ModelAndView mo = new ModelAndView();
@@ -34,30 +33,28 @@ public class OpController {
 		model.addAttribute("orp", new OrdenProduccion());
 		return mo;
 	}
+
 	@GetMapping("/dele/{id}")
 	public String opdelete(Model model, @PathVariable("id") int idop) {
-		System.out.println(idop);
 		opp.delete(idop);
 		return "redirect:/main/op";
 	}
-		
+
 	@GetMapping("/opregistrar")
 	public ModelAndView opregistrar(Model model, OrdenProduccion op) throws SQLException {
 		ModelAndView mu = new ModelAndView();
 		mu.setViewName("opregistrar");
 		mu.addObject("lis", pro.readAll());
-		
+
 		return mu;
 	}
-	
+
 	@PostMapping("/opregistration")
 	public String opregistration(Model model, OrdenProduccion op, HttpSession session) throws SQLException {
 		op.setIdusuario(Integer.parseInt(session.getAttribute("iduser").toString()));
 		opp.create(op);
-		// JOptionPane.showMessageDialog(null, op.getFentrega());
-		// ModelAndView mu = new ModelAndView();
-		// mu.setViewName("opregistration");
-		// mu.addObject("lis", pro.readAll());
+		session.setAttribute("cod", opp.getLast().get(0).values().toArray()[2]);
+		session.setAttribute("fgen", opp.getLast().get(0).values().toArray()[3]);
 		return "redirect:/main/opregistrar";
 	}
 }

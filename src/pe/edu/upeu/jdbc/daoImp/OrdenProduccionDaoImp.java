@@ -26,21 +26,21 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 
 	@Override
 	public int create(OrdenProduccion r) {
-		String sql = "{call SP_REGISTRAROP (?)}";
+		String sql = "{call SP_REGISTAROP (?)}";
 		return jdbcTemplate.update(sql, r.getIdusuario());
 	}
 
 	@Override
 	public int update(OrdenProduccion r) {
 		// TODO Auto-generated method stub
-		return 0 ;
+		return 0;
 	}
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
 		String sql = "DELETE FROM ORDEN_PRODUCCION WHERE IDOP=?";
-		return jdbcTemplate.update(sql,id);
+		return jdbcTemplate.update(sql, id);
 	}
 
 	@Override
@@ -53,6 +53,14 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 	public List<Map<String, Object>> readAllop() {
 		// TODO Auto-generated method stub
 		return jdbcTemplate.queryForList("Select * from orden_produccion");
+	}
+
+	@Override
+	public List<Map<String, Object>> getLast() {
+		// TODO Auto-generated method stub
+		String sql = "select * from ORDEN_PRODUCCION"
+				+ " where IDOP = ( select max(IDOP) from ORDEN_PRODUCCION )";
+		return jdbcTemplate.queryForList(sql);
 	}
 
 }
