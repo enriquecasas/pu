@@ -66,6 +66,12 @@ boto -->
 				<div class="col-md-12">
 					<div class="app-breadcrumb breadcrumb " style="">
 						<div class="col-auto">
+							<label for="apellido">Código</label>
+						</div>
+						<div class="col-xs-1">
+							<input type="text" class="form-control" id="" width="150" placeholder=""/>
+						</div>
+						<div class="col-auto">
 							<label for="apellido">Fecha Actual</label>
 						</div>
 						<div class="col-xs-1">
@@ -90,6 +96,7 @@ boto -->
 											i++;
 										%>
 										<option>${op.nombre}</option>>
+										
 										
 									</c:forEach>
 								</select>
@@ -206,5 +213,3 @@ boto -->
     </script>
 
 </body>
-
-</html>

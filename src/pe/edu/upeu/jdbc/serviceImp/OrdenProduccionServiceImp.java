@@ -16,8 +16,7 @@ public class OrdenProduccionServiceImp implements OrdenProduccionService {
 	private OrdenProduccionDao ordenProduccionDao;
 	@Override
 	public int create(OrdenProduccion r) {
-		// TODO Auto-generated method stub
-		return 0;
+		return ordenProduccionDao.create(r);
 	}
 
 	@Override
@@ -29,7 +28,7 @@ public class OrdenProduccionServiceImp implements OrdenProduccionService {
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return ordenProduccionDao.delete(id);
 	}
 
 	@Override

@@ -39,7 +39,6 @@ public class ProductoServiceImp implements ProductoService {
 
 	@Override
 	public List<Map<String, Object>> readAll() {
-		// TODO Auto-generated method stub
 		return productoDao.readAll();
 	}
 

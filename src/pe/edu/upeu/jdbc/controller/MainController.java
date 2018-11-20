@@ -11,9 +11,12 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import pe.edu.upeu.jdbc.daoImp.OrdenProduccionDaoImp;
@@ -24,36 +27,23 @@ import pe.edu.upeu.jdbc.serviceImp.OrdenProduccionServiceImp;
 import pe.edu.upeu.jdbc.serviceImp.UsuarioServiceImp;
 
 @Controller
-@RequestMapping("/main")
 public class MainController {
 	@Autowired
 	private UsuarioService usp;
 
-	/*
-	 * @PostMapping("/bienvenido") public String main() { return "main"; }
-	 */
-	@PostMapping("/bienvenido")
-	public ModelAndView main2(Model model, Usuario user, HttpServletRequest httpServletRequest) {
-		HttpSession httpSession = httpServletRequest.getSession();
-		ModelAndView andView = new ModelAndView();
-		try {
-			//JOptionPane.showMessageDialog(null,user.);
-			if (usp.validaUser(user) != null) {
-			
-				andView.setViewName("main");
-				httpSession.setAttribute("user", user.getNomuser());
-				//httpSession.setAttribute("user", user.getIduser());
-				andView.addObject("user", (String) httpSession.getAttribute("user"));
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			andView.setViewName("redirect:/");
+	@PostMapping("main/bienvenido")
+	public String main2(@ModelAttribute("usuario") Usuario user, Model model, HttpSession session) {		
+		if (!usp.validaUser(user).isEmpty()) {			
+			session.setAttribute("user", user.getNomuser());	
+			session.setAttribute("iduser", usp.validaUser(user).get(0).values().toArray()[0]);
+			//JOptionPane.showMessageDialog(null,  user.getEstado());
+			return "main";
+		} else {
+			return "index";
 		}
-
-		return andView;
 	}
 
-	@GetMapping("/user")
+	@GetMapping("main/user")
 	public ModelAndView user() {
 		// JOptionPane.showMessageDialog(null, "estas aqui");
 		ModelAndView ma = new ModelAndView();
@@ -88,5 +78,4 @@ public class MainController {
 		return "redirect:/main/editarUser";
 	}
 
-	
 }

@@ -69,7 +69,7 @@ public class UsuarioDaoImp implements UsuarioDao{
 				+ " r, PRIVILEGIO p where u.IDROL=r.IDROL"
 				+ " and r.IDROL = p.IDROL and u.NOM_USER= '"+u.getNomuser()+"' and u.CLAVE='"+u.getClave()+"'";
 				
-		JOptionPane.showMessageDialog(null,jdbcTemplate.queryForList(sql));	
+//		JOptionPane.showMessageDialog(null,jdbcTemplate.queryForList(sql));	
 			
 		return jdbcTemplate.queryForList(sql);
 	}
