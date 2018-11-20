@@ -47,7 +47,6 @@ public class UsuarioDaoImp implements UsuarioDao{
 	@Override
 	public Usuario read(int id) {		
 		// TODO Auto-generated method stub
-	
 		String sql = "select * from contact where id = ?";
 		   Usuario user = jdbcTemplate.queryForObject(sql, new UsuarioRowMapper(), id);
 		return user;

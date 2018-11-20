@@ -10,7 +10,7 @@
 				<img src="../recursos/img/avatar-7.jpg" alt="person"
 					class="img-fluid rounded-circle">
 				<h2 class="h5">${user}</h2>
-				<span>${user}</span>
+				<span>${user}</span>  
 			</div>
 			<!-- Small Brand information, appears on minimized sidebar-->
 			<div class="sidenav-header-logo">
