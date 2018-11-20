@@ -64,19 +64,6 @@ boto -->
 						<form action="opregistration" method="post">
 							<div class="app-breadcrumb breadcrumb " style="">
 								<div class="col-auto">
-									<label>Fecha Actual </span></label>
-								</div>
-								<div class="col-xs-1">
-									<input id="datepicker" name="" width="150" />
-								</div>
-								<div class="col-auto">
-									<label for="">Fecha Entrega</label>
-								</div>
-								<div class="col-xs-1">
-									<input id="datepicker2" name="fentrega" width="150" />
-								</div>
-
-								<div class="col-auto">
 									<div class="for-group">
 										<input type="submit" class="btn btn-primary fa fa-plus" value="+*+">
 									</div>
