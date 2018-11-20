@@ -61,24 +61,26 @@ boto -->
 				%>
 				<div class="col-md-12">
 					<div class="card">
-						<form action="opregistrar" method="">
+						<form action="opregistration" method="post">
 							<div class="app-breadcrumb breadcrumb " style="">
+
 								<div class="col-auto">
-									<button type="" class="btn btn-primary" value="">
-										<i class="fa fa-plus" aria-hidden="true"> </i>
-									</button>
-								</div>
-								<div class="col-auto">
-									<label for="apellido">Fecha Actual</label>
+									<label>Fecha Actual</label>
 								</div>
 								<div class="col-xs-1">
-									<input id="datepicker" width="150" />
+									<input id="datepicker" name="fgeneracion" width="150" />
 								</div>
 								<div class="col-auto">
-									<label for="apellido">Fecha Entrega</label>
+									<label for="">Fecha Entrega</label>
 								</div>
 								<div class="col-xs-1">
-									<input id="datepicker2" width="150" />
+									<input id="datepicker2" name="fentrega" width="150" />
+								</div>
+
+								<div class="col-auto">
+									<div class="for-group">
+										<input type="submit" class="btn btn-primary fa fa-plus" value="+*+">
+									</div>
 								</div>
 							</div>
 						</form>
@@ -126,20 +128,19 @@ boto -->
 
 	<script>
 		$('#datepicker').datepicker({
-			uiLibrary : 'bootstrap4'
+			uiLibrary : 'bootstrap4',
+			format : 'dd/mm/yyyy'
 		});
-	</script>
-	<script>
+
 		$('#datepicker2').datepicker({
-			uiLibrary : 'bootstrap4'
+			uiLibrary : 'bootstrap4',
+			format : 'dd/mm/yyyy'
 		});
 	</script>
 	<!-- Essential javascripts for application to work-->
 	<!-- JavaScript files-->
 	<script src="${urlrecursos}/vendor/jquery/jquery.min.js"></script>
-	<script src="${urlrecursos}/vendor/popper.js/umd/popper.min.js">
-		
-	</script>
+	<script src="${urlrecursos}/vendor/popper.js/umd/popper.min.js"></script>
 	<script src="${urlrecursos}/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script
 		src="${urlrecursos}/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>

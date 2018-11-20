@@ -1,25 +1,25 @@
 package pe.edu.upeu.jdbc.entity;
 
+import java.sql.Date;
+
 public class OrdenProduccion {
 
 	private int idop;
 	private int idusuario;
 	private String codigo;
 	private String fgeneracion;
-	private String fentrega;	
+	private String fentrega;
 	private int estado;
-	
+
 	public OrdenProduccion() {
-		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public OrdenProduccion(int idusuario, String codigo, String fgeneracion, String fentrega, int estado) {
+	public OrdenProduccion(int idusuario, String fgeneracion, String fentrega) {
 		super();
 		this.idusuario = idusuario;
-		this.codigo = codigo;
 		this.fgeneracion = fgeneracion;
 		this.fentrega = fentrega;
-		this.estado = estado;
 	}
 
 	public int getIdop() {
@@ -69,8 +69,5 @@ public class OrdenProduccion {
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
-
-
-
 
 }

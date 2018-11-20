@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,13 +44,13 @@
             <div class="logo text-uppercase"><span>Sistema de Control de</span><strong class="text-primary"> insumos Generales</strong></div>
             <h1>SCIG</h1>
            
-            <form action="main/bienvenido" method="post" class="login-form">
+            <form:form modelAttribute="usuario" action="${pageContext.request.contextPath}/main/bienvenido" method="post" class="login-form">
               <div class="form-group-material">
-                <input id="login-username" type="text" required data-msg="Please enter your username" class="input-material" name="nomuser" autofocus>
-                <label for="login-username" class="label-material">Username</label>
+                <form:input id="login-username" path="nomuser" type="text" class="input-material" />
+                <label for="login-username" class="label-material">Username</label>                
               </div>
               <div class="form-group-material">
-                <input id="login-password" type="password" name="clave" required data-msg="Please enter your password" class="input-material">
+                <form:input id="login-password" path="clave" type="password"  class="input-material"/>
                 <label for="login-password" class="label-material">Password</label>
               </div>
               <div class="form-group text-center">
@@ -59,7 +60,7 @@
                 <!-- This should be submit button but I replaced it with <a> for demo purposes-->
               </div>
              
-            </form>
+            </form:form>
             <a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register.html" class="signup">Signup</a>
           </div>
           <div class="copyrights text-center">

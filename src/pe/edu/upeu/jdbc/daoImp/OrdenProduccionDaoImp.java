@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.jdbc.dao.OrdenProduccionDao;
@@ -25,8 +26,8 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 
 	@Override
 	public int create(OrdenProduccion r) {
-		// TODO Auto-generated method stub
-		return jdbcTemplate.update("call PACK_ORDENPRODUCCION.SP_REGISTAR(?,?,?)", r.getIdusuario(), r.getFgeneracion(),r.getFentrega());
+		String sql = "{call SP_REGISTRAROP (?,?,?)}";
+		return jdbcTemplate.update(sql, r.getIdusuario(), r.getFgeneracion(), r.getFentrega());
 	}
 
 	@Override
@@ -38,7 +39,8 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = "DELETE FROM ORDEN_PRODUCCION WHERE IDOP=?";
+		return jdbcTemplate.update(sql,id);
 	}
 
 	@Override
