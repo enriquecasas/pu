@@ -86,8 +86,7 @@ boto -->
 										<%
 											i++;
 										%>
-										<option>${op.nombre}</option>>
-										
+										<option value="${op.idproducto}">${op.nombre}</option>>
 										
 									</c:forEach>
 								</select>
