@@ -66,22 +66,13 @@ boto -->
 				<div class="col-md-12">
 					<div class="app-breadcrumb breadcrumb " style="">
 						<div class="col-auto">
-							<label for="apellido">Código</label>
-						</div>
-						<div class="col-xs-1">
-							<input type="text" class="form-control" id="" width="150" placeholder=""/>
+							<label for="apellido">Código: </label> <span>${cod}</span>
 						</div>
 						<div class="col-auto">
-							<label for="apellido">Fecha Actual</label>
-						</div>
-						<div class="col-xs-1">
-							<input id="datepicker" width="150" />
+							<label for="apellido">Fecha Actual: </label> <span>${fgen}</span>
 						</div>
 						<div class="col-auto">
 							<label for="apellido">Fecha Entrega</label>
-						</div>
-						<div class="col-xs-1">
-							<input id="datepicker2" width="150" />
 						</div>
 					</div>
 					<div class="card">
@@ -96,6 +87,7 @@ boto -->
 											i++;
 										%>
 										<option>${op.nombre}</option>>
+										
 										
 									</c:forEach>
 								</select>
@@ -195,12 +187,6 @@ boto -->
 	<!-- Google analytics script-->
 	<script type="${urlrecursos}/text/javascript">
 	
-	
-	
-	
-
-    
-    
       if(document.location.hostname == 'pratikborsadiya.in') {
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

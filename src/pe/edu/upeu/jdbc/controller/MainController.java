@@ -33,10 +33,9 @@ public class MainController {
 
 	@PostMapping("main/bienvenido")
 	public String main2(@ModelAttribute("usuario") Usuario user, Model model, HttpSession session) {		
-		if (!usp.validaUser(user).isEmpty()) {
-			session.setAttribute("user", user.getNomuser());
+		if (!usp.validaUser(user).isEmpty()) {			
+			session.setAttribute("user", user.getNomuser());	
 			session.setAttribute("iduser", usp.validaUser(user).get(0).values().toArray()[0]);
-			//JOptionPane.showMessageDialog(null,  user.getIduser());
 			return "main";
 		} else {
 			return "index";
