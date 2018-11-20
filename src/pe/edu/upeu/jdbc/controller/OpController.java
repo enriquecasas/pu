@@ -1,11 +1,5 @@
 package pe.edu.upeu.jdbc.controller;
 
-
-<<<<<<< HEAD
-=======
-import java.math.BigDecimal;
->>>>>>> c0d8f81ef07e15e91120717a4e7b611e09e2adec
-import java.sql.Date;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpSession;
@@ -13,19 +7,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.SystemPropertyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 
-import pe.edu.upeu.jdbc.entity.DetalleOp;
 import pe.edu.upeu.jdbc.entity.OrdenProduccion;
-import pe.edu.upeu.jdbc.entity.Usuario;
 import pe.edu.upeu.jdbc.service.OrdenProduccionService;
 import pe.edu.upeu.jdbc.service.ProductoService;
 
@@ -63,26 +52,12 @@ public class OpController {
 	
 	@PostMapping("/opregistration")
 	public String opregistration(Model model, OrdenProduccion op, HttpSession session) throws SQLException {
-<<<<<<< HEAD
 		op.setIdusuario(Integer.parseInt(session.getAttribute("iduser").toString()));
 		opp.create(op);
 		// JOptionPane.showMessageDialog(null, op.getFentrega());
 		// ModelAndView mu = new ModelAndView();
 		// mu.setViewName("opregistration");
 		// mu.addObject("lis", pro.readAll());
-=======
-		System.out.println(session.getAttribute("iduser").getClass());
-		int idusr = session.getAttribute("iduser");
-		System.out.println(idusr);
-		op.setIdusuario(idusr);
-		System.out.println((int) session.getAttribute("iduser"));
-		
-		opp.create(op);
-		//JOptionPane.showMessageDialog(null, op.getFentrega());
-		//ModelAndView mu = new ModelAndView();
-		//mu.setViewName("opregistration");
-		//mu.addObject("lis", pro.readAll());
->>>>>>> c0d8f81ef07e15e91120717a4e7b611e09e2adec
 		return "redirect:/main/opregistrar";
 	}
 }

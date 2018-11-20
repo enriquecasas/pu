@@ -63,7 +63,6 @@ boto -->
 					<div class="card">
 						<form action="opregistration" method="post">
 							<div class="app-breadcrumb breadcrumb " style="">
-<<<<<<< HEAD
 
 								<div class="col-auto">
 									<label>Fecha Actual</label>

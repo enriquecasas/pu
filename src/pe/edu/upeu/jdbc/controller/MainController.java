@@ -7,24 +7,16 @@ import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import pe.edu.upeu.jdbc.daoImp.OrdenProduccionDaoImp;
 import pe.edu.upeu.jdbc.entity.Usuario;
-import pe.edu.upeu.jdbc.service.OrdenProduccionService;
 import pe.edu.upeu.jdbc.service.UsuarioService;
-import pe.edu.upeu.jdbc.serviceImp.OrdenProduccionServiceImp;
-import pe.edu.upeu.jdbc.serviceImp.UsuarioServiceImp;
 
 @Controller
 public class MainController {
@@ -33,17 +25,10 @@ public class MainController {
 
 	@PostMapping("main/bienvenido")
 	public String main2(@ModelAttribute("usuario") Usuario user, Model model, HttpSession session) {		
-<<<<<<< HEAD
 		if (!usp.validaUser(user).isEmpty()) {			
 			session.setAttribute("user", user.getNomuser());	
 			session.setAttribute("iduser", usp.validaUser(user).get(0).values().toArray()[0]);
 			//JOptionPane.showMessageDialog(null,  user.getEstado());
-=======
-		if (!usp.validaUser(user).isEmpty()) {
-			session.setAttribute("user", user.getNomuser());
-			session.setAttribute("iduser", usp.validaUser(user).get(0).values().toArray()[0]);
-			//JOptionPane.showMessageDialog(null,  user.getIduser());
->>>>>>> c0d8f81ef07e15e91120717a4e7b611e09e2adec
 			return "main";
 		} else {
 			return "index";
