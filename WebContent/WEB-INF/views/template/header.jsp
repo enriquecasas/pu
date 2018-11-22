@@ -39,7 +39,7 @@
 						Almacén
 				</a>
 					<ul id="AlmacemDropdown" class="collapse list-unstyled ">
-						<li><a href="#">Page</a></li>
+						<li><a href="almacen">Inventario</a></li>
 						<li><a href="#">Page</a></li>
 						<li><a href="#">Page</a></li>
 					</ul></li>
