@@ -35,10 +35,7 @@ boto -->
 <link rel="stylesheet" href="${urlrecursos}/css/custom.css">
 <!-- Favicon-->
 <link rel="shortcut icon" href="${urlrecursos}/img/favicon.ico">
-<link rel="stylesheet" href="${urlrecursos}/css/bootstrap-select.css">
-
-
-<!-- Tweaks fo"WebContent/recursos/js/bootstrap-select.js"r older IEs-->
+<!-- Tweaks for older IEs-->
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -51,123 +48,85 @@ boto -->
 	type="text/javascript"></script>
 <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css"
 	rel="stylesheet" type="text/css" />
-
 </head>
 <body class="app sidebar-mini rtl">
 	<div class="page">
 		<jsp:include page="template/header.jsp"></jsp:include>
 		<main class="app-content">
-		<h1>soy op registar</h1>
+		<h1>soy almacen</h1>
 		<section class="dashboard-counts section-padding">
 			<div class="container-fluid">
 				<%
 					int i = 0;
 				%>
-			
 				<div class="col-md-12">
-					<div class="app-breadcrumb breadcrumb " style="">
-						<div class="col-auto">
-							<label for="apellido">Código: </label> <span>${cod}</span>
-						</div>
-						<div class="col-auto">
-							<label for="apellido">Fecha Actual: </label> <span>${fgen}</span>
-						</div>
-						<div class="col-auto">
-							<label for="apellido">Fecha Entrega</label>
-						</div>
-					</div>
 					<div class="card">
-						<div class="app-breadcrumb breadcrumb">
-
-							<div class="col-lg-5">
-								<select class="selectpicker form-control" id="combo"
-									data-container="body" data-live-search="true"
-									title="Selecciona un producto" data-hide-disabled="true">
-									<c:forEach items="${lis}" var="op">
-										<%
-											i++;
-										%>
-										<option id="producto" value="${op.idproducto}">${op.nombre}</option>>
-										
-									</c:forEach>
-	
-								</select>
+						<form action="opregistration" method="post">
+							<div class="app-breadcrumb breadcrumb " style="">
+								<div class="col-auto">
+									<div class="for-group">
+										<input type="submit" class="btn btn-primary fa fa-plus" value="+*+">
+									</div>
+								</div>
 							</div>
-							<!--end of col-->
-							<div class="col-auto">
-								<label for="apellido">Cantidad:</label>
-							</div>
-							<div class="col-xs-1">
-								<input type="text" class="form-control" id="cantidad"
-									placeholder="">
-							</div>
-							<div class="col-auto">
-								<input type="submit" class="btn btn-success" id="cantidad"
-									value="Agregar">
-							</div>
-						</div>
-
-
-						<div class="card-body">
+						</form>
+						<div class="card-body"
+							class="row justify-content-center align-items-center">
 							<table class="table table-bordered" style="max-width: 800px;">
 								<thead>
 									<tr>
 										<th scope="col">#</th>
 										<th scope="col">Código</th>
-										<th scope="col">Producto</th>
-										<th scope="col">Cantidad</th>
-
-										<th scope="col" colspan="2">Opcion</th>
+										<th scope="col">Fecha Generacón</th>
+										<th scope="col">Fecha Entrega</th>
+										<th scope="col" colspan="2">Opción</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${lis}" var="op">
+									<c:forEach items="${list}" var="op">
 										<%
 											i++;
 										%>
 										<tr>
-											<!--  <th scope="row"><%=i%></th>
+											<th scope="row"><%=i%></th>
 											<td>${op.codigo}</td>
-											<td>${op.nombre}</td>
-											<td>${op.idproducto}</td>
-											<td><a href="upd/1" style="color: blue;"><i
+											<td>${op.fgeneracion}</td>
+											<td>${op.fentrega}</td>
+											<td><a href="upda/${op.idop}" style="color: blue;"><i
 													class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-											<td><a href="del/1" style="color: red;"><i
-													class="fa fa-trash" aria-hidden="true"></i></a></td>-->
+											<td><a href="dele/${op.idop}" style="color: red;"><i
+													class="fa fa-trash" aria-hidden="true"></i></a></td>
 										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
 						</div>
 					</div>
+
+					<form role="form"></form>
+
 				</div>
-				<form role="form"></form>
-
 			</div>
-	</div>
 
-	</section>
-	</main>
+		</section>
+		</main>
 	</div>
 
 	<script>
 		$('#datepicker').datepicker({
-			dateFormat : 'yyyy',
-			uiLibrary : 'bootstrap4'
+			uiLibrary : 'bootstrap4',
+			format : 'dd/mm/yyyy'
 		});
-	</script>
-	<script>
+
 		$('#datepicker2').datepicker({
-			uiLibrary : 'bootstrap4'
+			uiLibrary : 'bootstrap4',
+			format : 'dd/mm/yyyy'
 		});
 	</script>
 	<!-- Essential javascripts for application to work-->
 	<!-- JavaScript files-->
-	"WebContent/recursos/js/bootstrap-select.js"
-	<script src="${urlrecursos}/vendor/jquery/jquery.min.js"></script>
 	<script src="${urlrecursos}/vendor/jquery/jquery.min.js"></script>
 	<script src="${urlrecursos}/vendor/popper.js/umd/popper.min.js"></script>
-
 	<script src="${urlrecursos}/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script
 		src="${urlrecursos}/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
@@ -182,12 +141,10 @@ boto -->
 	<script src="${urlrecursos}/js/charts-home.js"></script>
 	<!-- Main File-->
 	<script src="${urlrecursos}/js/front.js"></script>
-	<script src="${urlrecursos}/js/bootstrap-select.js"></script>
-	<script src="${urlrecursos}/js/bootstrap-select.min.js"></script>
-	<!-- <script src="${urlrecursos}/js/bootstrap-select.js"></script>-->
 	<!-- Google analytics script-->
 	<script type="${urlrecursos}/text/javascript">
-	
+    
+    
       if(document.location.hostname == 'pratikborsadiya.in') {
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -199,3 +156,5 @@ boto -->
     </script>
 
 </body>
+
+</html>
