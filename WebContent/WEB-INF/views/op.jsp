@@ -112,17 +112,6 @@ boto -->
 		</main>
 	</div>
 
-	<script>
-		$('#datepicker').datepicker({
-			uiLibrary : 'bootstrap4',
-			format : 'dd/mm/yyyy'
-		});
-
-		$('#datepicker2').datepicker({
-			uiLibrary : 'bootstrap4',
-			format : 'dd/mm/yyyy'
-		});
-	</script>
 	<!-- Essential javascripts for application to work-->
 	<!-- JavaScript files-->
 	<script src="${urlrecursos}/vendor/jquery/jquery.min.js"></script>
