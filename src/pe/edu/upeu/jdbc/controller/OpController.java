@@ -82,11 +82,10 @@ public class OpController {
 	
 	@GetMapping("/updaop/{id}")
 	public ModelAndView detalleupdate(Model model, @PathVariable("id") int id) {
-		System.out.println(des.read(id).toString());
 		ModelAndView medit = new ModelAndView();
 		medit.setViewName("editarOP");
 		medit.addObject("productList", pro.readAll());
-		medit.addObject("listaEdit", des.read(id));
+		medit.addObject("listaEdit", des.readAll(id));
 		return medit;
 	}
 	
