@@ -3,6 +3,8 @@ package pe.edu.upeu.jdbc.daoImp;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.JOptionPane;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -39,6 +41,7 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
+		//JOptionPane.showMessageDialog(null, "aqui estas");
 		String sql = "DELETE FROM ORDEN_PRODUCCION WHERE IDOP=?";
 		return jdbcTemplate.update(sql, id);
 	}
@@ -61,6 +64,14 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 		// TODO Auto-generated method stub
 		String sql = "select * from ORDEN_PRODUCCION" + " where IDOP = ( select max(IDOP) from ORDEN_PRODUCCION )";
 		return jdbcTemplate.queryForList(sql);
+	}
+
+	@Override
+	public int deletePro(int id) {
+		// TODO Auto-generated method stub
+		JOptionPane.showMessageDialog(null, "aqui estas");
+		String sql = "DELETE FROM ORDEN_PRODUCCION WHERE IDPRODUCTO=?";
+		return jdbcTemplate.update(sql, id);
 	}
 
 }

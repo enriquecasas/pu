@@ -49,4 +49,10 @@ public class OrdenProduccionServiceImp implements OrdenProduccionService {
 		return ordenProduccionDao.getLast();
 	}
 
+	@Override
+	public int deletePro(int id) {
+		// TODO Auto-generated method stub
+		return ordenProduccionDao.deletePro(id);
+	}
+
 }

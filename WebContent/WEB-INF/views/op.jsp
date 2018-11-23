@@ -18,7 +18,6 @@
 <!-- Fontastic Custom icon font-->
 <link rel="stylesheet" href="${urlrecursos}/css/fontastic.css">
 <!-- Google fonts - Ro
-
 boto -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">

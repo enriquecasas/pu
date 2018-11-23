@@ -45,6 +45,12 @@ public class OpController {
 		opp.delete(idop);
 		return "redirect:/main/op";
 	}
+	@GetMapping("/delet/{id}")
+	public String delet(Model model, @PathVariable("id") int id) {
+		opp.deletePro(id);
+		return "main/opregistrar";
+	}
+	
 
 	@GetMapping("/opregistrar")
 	public ModelAndView opregistrar(Model model, OrdenProduccion op) throws SQLException {

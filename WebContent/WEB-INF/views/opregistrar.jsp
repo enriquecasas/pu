@@ -130,7 +130,7 @@ boto -->
 												<td><a href="upd/${dt.iddetalleop}"
 													style="color: blue;"><i class="fa fa-pencil-square-o"
 														aria-hidden="true"></i></a></td>
-												<td><a href="del/${dt.iddetalleop}" style="color: red;"><i
+												<td><a href="delet/${dt.idproducto}" style="color: red;"><i
 														class="fa fa-trash" aria-hidden="true"></i></a></td>
 											</tr>
 										</c:forEach>
