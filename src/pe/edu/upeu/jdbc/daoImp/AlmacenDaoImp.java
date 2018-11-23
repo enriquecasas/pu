@@ -7,30 +7,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import pe.edu.upeu.jdbc.dao.ProductoDao;
-import pe.edu.upeu.jdbc.entity.Producto;
+import pe.edu.upeu.jdbc.dao.AlmacenDao;
+import pe.edu.upeu.jdbc.entity.Kardex;
 @Repository
-public class ProductoDaoImp implements ProductoDao {
+public class AlmacenDaoImp implements AlmacenDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
 	
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
 	}
-	
+
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-
+	
+	
+	
 	@Override
-	public int create(Producto u) {
+	public int create(Kardex k) {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.update("call SP_INGRESAR_ROL(?)", u.getNombre());
+		return 0;
 	}
 
 	@Override
-	public int update(Producto u) {
+	public int update(Kardex k) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -42,18 +43,21 @@ public class ProductoDaoImp implements ProductoDao {
 	}
 
 	@Override
-	public Producto read(int id) {
+	public Kardex read(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	
 	@Override
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub
-		 return this.jdbcTemplate.queryForList("SELECT P.IDPRODUCTO idproducto,P.CODIGO codigo,P.NOMBRE nombre " + 
-		 		"FROM KARDEX K, PRODUCTO P, ALMACEN A " + 
-		 		"where P.IDPRODUCTO = K.IDPRODUCTO AND K.IDALMACEN = A.IDALMACEN AND A.IDALMACEN=4");
+		return this.jdbcTemplate.queryForList("SELECT \r\n" + 
+				" a.ABREVIADO," + 
+				" p.CODIGO," + 
+				" p.NOMBRE," + 
+				" k.STOCK" + 
+				" FROM KARDEX k,ALMACEN a,PRODUCTO p" + 
+				" WHERE k.IDALMACEN = a.IDALMACEN and k.IDPRODUCTO = p.IDPRODUCTO");
 	}
 
 }

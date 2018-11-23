@@ -48,5 +48,12 @@
 		class="pe.edu.upeu.jdbc.daoImp.ProductoDaoImp">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
+	<bean id="almacenDao"
+		class="pe.edu.upeu.jdbc.daoImp.AlmacenDaoImp">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+
+
+
 
 </beans>

@@ -76,25 +76,25 @@ boto -->
 								<thead>
 									<tr>
 										<th scope="col">#</th>
+										<th scope="col">Almacén</th>
 										<th scope="col">Código</th>
-										<th scope="col">Fecha Generacón</th>
-										<th scope="col">Fecha Entrega</th>
-										<th scope="col" colspan="2">Opción</th>
+										<th scope="col">Nombre</th>
+										<th scope="col">Stock</th>
+										<th scope="col" colspan="2">Ver</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${list}" var="op">
+									<c:forEach items="${listaProd}" var="pro">
 										<%
 											i++;
 										%>
 										<tr>
 											<th scope="row"><%=i%></th>
-											<td>${op.codigo}</td>
-											<td>${op.fgeneracion}</td>
-											<td>${op.fentrega}</td>
-											<td><a href="upda/${op.idop}" style="color: blue;"><i
-													class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-											<td><a href="dele/${op.idop}" style="color: red;"><i
+											<td>${pro.abreviado}</td>
+											<td>${pro.codigo}</td>
+											<td>${pro.nombre}</td>
+											<td>${pro.stock}</td>
+											<td><a href="dele/" style="color: red;"><i
 													class="fa fa-trash" aria-hidden="true"></i></a></td>
 										</tr>
 									</c:forEach>
@@ -112,17 +112,6 @@ boto -->
 		</main>
 	</div>
 
-	<script>
-		$('#datepicker').datepicker({
-			uiLibrary : 'bootstrap4',
-			format : 'dd/mm/yyyy'
-		});
-
-		$('#datepicker2').datepicker({
-			uiLibrary : 'bootstrap4',
-			format : 'dd/mm/yyyy'
-		});
-	</script>
 	<!-- Essential javascripts for application to work-->
 	<!-- JavaScript files-->
 	<script src="${urlrecursos}/vendor/jquery/jquery.min.js"></script>
