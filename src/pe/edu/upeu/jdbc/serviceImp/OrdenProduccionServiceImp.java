@@ -34,7 +34,7 @@ public class OrdenProduccionServiceImp implements OrdenProduccionService {
 	@Override
 	public OrdenProduccion read(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return ordenProduccionDao.read(id);
 	}
 
 	@Override

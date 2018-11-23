@@ -32,27 +32,24 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 
 	@Override
 	public int update(OrdenProduccion r) {
-		String sql = "update orden_produccion set ";
-		return jdbcTemplate.update(sql);
+		return 0;
 	}
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		String sql = "DELETE FROM ORDEN_PRODUCCION WHERE IDOP=?";
-		return jdbcTemplate.update(sql, id);
+		return jdbcTemplate.update("{call SP_ELMINARCASCADAOP(?)}", id);
 	}
 
 	@Override
 	public OrdenProduccion read(int id) {
-		String sql = "select * from orden_produccion where id = ?";
+		String sql = "select * from orden_produccion where idop = ?";
 		OrdenProduccion op = jdbcTemplate.queryForObject(sql, new OrdenProduccionRowMapper(), id);
 		return op;
 	}
 
 	@Override
 	public List<Map<String, Object>> readAllop() {
-		// TODO Auto-generated method stub
 		return jdbcTemplate.queryForList("SELECT*FROM ORDEN_PRODUCCION");
 	}
 

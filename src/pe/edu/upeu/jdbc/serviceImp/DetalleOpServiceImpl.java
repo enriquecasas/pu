@@ -38,7 +38,12 @@ public class DetalleOpServiceImpl implements DetalleOpService {
 
 	@Override
 	public int delete(int id) {
-		return 0;
+		return detalleOpDao.delete(id);
+	}
+
+	@Override
+	public int update(DetalleOp d) {
+		return detalleOpDao.update(d);
 	}
 
 }

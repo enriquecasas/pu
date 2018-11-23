@@ -63,7 +63,6 @@ public class OpController {
 		session.setAttribute("cod", opp.getLast().get(0).values().toArray()[2]);
 		session.setAttribute("fgen", opp.getLast().get(0).values().toArray()[3]);
 		session.setAttribute("fent", opp.getLast().get(0).values().toArray()[4]);
-		//md.addObject("listaDetalle", des.readAll());
 		return "redirect:/main/opregistrar";
 	}
 	
@@ -81,18 +80,36 @@ public class OpController {
 	}
 	
 	@GetMapping("/updaop/{id}")
-	public ModelAndView detalleupdate(Model model, @PathVariable("id") int id) {
+	public ModelAndView detalleupdate(Model model, @PathVariable("id") int id, HttpSession session) {
+		session.setAttribute("iddetalle", id);
 		ModelAndView medit = new ModelAndView();
 		medit.setViewName("editarOP");
 		medit.addObject("productList", pro.readAll());
 		medit.addObject("listaEdit", des.readAll(id));
+		medit.addObject("code", opp.read(id).getCodigo());
+		medit.addObject("fgen", opp.read(id).getFgeneracion());
+		medit.addObject("fent", opp.read(id).getFentrega());
 		return medit;
 	}
 	
-	@GetMapping("/editarOP/{id}")
-	public String opEdit(Model model) throws SQLException {
-		return "redirect:/main/editarOP";
+	@GetMapping("/editarOP")
+	public ModelAndView editarOP(Model model, DetalleOp detalle) throws SQLException {
+		ModelAndView medit = new ModelAndView();
+		medit.setViewName("editarOP");
+		medit.addObject("listaEdit", des.readAll(33));
+		//detalle.setIdop(Integer.parseInt(session.getAttribute("iddetalle").toString()));
+		//detalle.setIdproducto(Integer.parseInt(request.getParameter("idProducto")));
+		//detalle.setCantidad(Double.parseDouble(request.getParameter("cantProducto")));
+		des.create(detalle);
+		return medit;
+	}
+	
+	@PostMapping("/deldetalle/{id}")
+	public String deldetalle(Model model, @PathVariable("id") int id) {
+		des.delete(id);
+		return "redirect:/main/nuevodetalle";
 	}
 	
 }
+
 

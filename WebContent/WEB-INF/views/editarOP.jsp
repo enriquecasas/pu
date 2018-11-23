@@ -57,7 +57,7 @@ boto -->
 	<div class="page">
 		<jsp:include page="template/header.jsp"></jsp:include>
 		<main class="app-content">
-		<h1>soy op ver </h1>
+		<h1>soy op ver</h1>
 		<section class="dashboard-counts section-padding">
 			<div class="container-fluid">
 				<%
@@ -67,16 +67,17 @@ boto -->
 				<div class="col-md-12">
 					<div class="app-breadcrumb breadcrumb " style="">
 						<div class="col-auto">
-							<label>Código: </label> <span></span>
+							<label>Código: </label> <span> ${code} </span>
 						</div>
 						<div class="col-auto">
-							<label>Fecha Actual: </label> <span></span>
+							<label>Fecha Actual: </label> <span> ${fgen} </span>
 						</div>
 						<div class="col-auto">
-							<label for="fentrega">Fecha Entrega: <span></span></label>
+							<label for="fentrega">Fecha Entrega: <span>
+									${fent} </span></label>
 						</div>
 						<div class="card">
-							<form action="nuevodetalle" method="post">
+							<form action="editarOP" method="get">
 								<div class="col-auto">
 									<div class="app-breadcrumb breadcrumb">
 										<div class="col-lg-5">
@@ -86,21 +87,20 @@ boto -->
 												name="idProducto">
 												<c:forEach items="${productList}" var="op">
 													<option value="${op.idproducto}">${op.nombre}</option>
-									</c:forEach>
+												</c:forEach>
 											</select>
 										</div>
 									</div>
 									<!--end of col-->
 									<div class="col-auto">
-										<label for="apellido">Cantidad:</label>
+										<label for="cantidad">Cantidad:</label>
 									</div>
 									<div class="col-xs-1">
 										<input type="number" class="form-control" id="cantidad"
 											name="cantProducto" placeholder="">
 									</div>
 									<div class="col-auto">
-										<input type="submit" class="btn btn-success" id="cantidad"
-											value="Agregar">
+										<input type="submit" class="btn btn-success" value="Agregar">
 									</div>
 								</div>
 							</form>
@@ -126,8 +126,9 @@ boto -->
 												<td>${edit.codigo}</td>
 												<td>${edit.nombre}</td>
 												<td>${edit.cantidad}</td>
-												<td><a href="del/${edit.iddetalleop}" style="color: red;"><i
-														class="fa fa-trash" aria-hidden="true"></i></a></td>
+												<td><a href="deldetalle/${edit.iddetalleop}"
+													style="color: red;"><i class="fa fa-trash"
+														aria-hidden="true"></i></a></td>
 											</tr>
 										</c:forEach>
 									</tbody>

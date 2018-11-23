@@ -35,7 +35,7 @@ public class DetalleOpDaoImpl implements DetalleOpDao {
 
 	@Override
 	public List<Map<String, Object>> readAll(int id) {
-		return jdbcTemplate.queryForList("SELECT p.CODIGO, p.NOMBRE, d.CANTIDAD "
+		return jdbcTemplate.queryForList("SELECT p.CODIGO, p.NOMBRE, d.CANTIDAD, d.IDDETALLEOP "
 				+ " FROM DETALLE_OP d, PRODUCTO p WHERE d.IDPRODUCTO = p.IDPRODUCTO and d.IDOP = ?", id);
 	}
 
@@ -53,7 +53,12 @@ public class DetalleOpDaoImpl implements DetalleOpDao {
 
 	@Override
 	public int delete(int id) {
-		return 0;
+		return jdbcTemplate.update("Delete from detalle_op where iddetalleop = ?", id);
+	}
+
+	@Override
+	public int update(DetalleOp d) {
+		return jdbcTemplate.update("Update ");
 	}
 
 }

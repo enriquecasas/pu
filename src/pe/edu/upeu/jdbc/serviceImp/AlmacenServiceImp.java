@@ -40,7 +40,7 @@ public class AlmacenServiceImp implements AlmacenService {
 	@Override
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub
-		return almacenDao.readAll();
+		return null;
 	}
 
 }
