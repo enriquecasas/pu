@@ -49,15 +49,15 @@ public class AlmacenDaoImp implements AlmacenDao {
 	}
 
 	@Override
-	public List<Map<String, Object>> readAll() {
+	public List<Map<String, Object>> readAll(int id) {
 		// TODO Auto-generated method stub
-		return this.jdbcTemplate.queryForList("SELECT \r\n" + 
+		return this.jdbcTemplate.queryForList("SELECT "+ 
 				" a.ABREVIADO," + 
 				" p.CODIGO," + 
 				" p.NOMBRE," + 
 				" k.STOCK" + 
 				" FROM KARDEX k,ALMACEN a,PRODUCTO p" + 
-				" WHERE k.IDALMACEN = a.IDALMACEN and k.IDPRODUCTO = p.IDPRODUCTO");
+				" WHERE k.IDALMACEN = a.IDALMACEN and k.IDPRODUCTO = p.IDPRODUCTO and k.IDALMACEN="+id);
 	}
 
 }
