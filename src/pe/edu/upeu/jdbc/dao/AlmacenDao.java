@@ -12,6 +12,7 @@ public interface AlmacenDao {
 	int delete(int id);
 	Kardex read(int id);
 	List<Map<String, Object>> readAll(int id);
+	List<Map<String, Object>> readAll2();
 }
 
 

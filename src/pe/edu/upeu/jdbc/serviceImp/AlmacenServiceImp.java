@@ -38,9 +38,16 @@ public class AlmacenServiceImp implements AlmacenService {
 	}
 
 	@Override
-	public List<Map<String, Object>> readAll() {
+	public List<Map<String, Object>> readAll(int id) {
 		// TODO Auto-generated method stub
-		return almacenDao.readAll();
+		return almacenDao.readAll(id);
 	}
+
+	@Override
+	public List<Map<String, Object>> readAll2() {
+		// TODO Auto-generated method stub
+		return almacenDao.readAll2();
+	}
+
 
 }
