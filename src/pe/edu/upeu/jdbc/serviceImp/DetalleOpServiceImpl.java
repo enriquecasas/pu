@@ -22,8 +22,8 @@ public class DetalleOpServiceImpl implements DetalleOpService {
 	}
 
 	@Override
-	public List<Map<String, Object>> readAll() {
-		return detalleOpDao.readAll();
+	public List<Map<String, Object>> readAll(int id) {
+		return detalleOpDao.readAll(id);
 	}
 
 	@Override

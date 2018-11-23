@@ -61,6 +61,7 @@ public class OpController {
 		session.setAttribute("idOrden", opp.getLast().get(0).values().toArray()[0]);
 		session.setAttribute("cod", opp.getLast().get(0).values().toArray()[2]);
 		session.setAttribute("fgen", opp.getLast().get(0).values().toArray()[3]);
+		//md.addObject("listaDetalle", des.readAll());
 		return "redirect:/main/opregistrar";
 	}
 	
@@ -72,14 +73,7 @@ public class OpController {
 		des.create(det);
 		ModelAndView md = new ModelAndView();
 		md.setViewName("opregistrar");
-		md.addObject("listaDetalle", des.readAll());
-		return md;
-	}
-	
-	@GetMapping("/nuevodetalle")
-	public ModelAndView nuevodet(Model model, DetalleOp det, HttpSession session, HttpServletRequest request) throws SQLException {
-		ModelAndView md = new ModelAndView();
-		md.setViewName("opregistrar");
+		md.addObject("listaDetalle", des.readAll(Integer.parseInt(session.getAttribute("idOrden").toString())));
 		md.addObject("lis", pro.readAll());
 		return md;
 	}

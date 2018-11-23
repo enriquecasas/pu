@@ -133,8 +133,8 @@ boto -->
 											%>
 											<tr>
 												<th scope="row"><%=i%></th>
-												<td>${dt.idproducto}</td>
-												<td>${dt.iddetalleop}</td>
+												<td>${dt.codigo}</td>
+												<td>${dt.nombre}</td>
 												<td>${dt.cantidad}</td>
 												<td><a href="upd/1" style="color: blue;"><i
 														class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
@@ -154,7 +154,7 @@ boto -->
 
 	<script>
 		$('#datepicker').datepicker({
-			dateFormat : 'dd-MM-yyyy',
+			format : 'dd-MM-yyyy',
 			uiLibrary : 'bootstrap4'
 		});
 	</script>
