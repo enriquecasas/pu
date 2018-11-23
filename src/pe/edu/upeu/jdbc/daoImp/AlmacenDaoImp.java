@@ -60,4 +60,11 @@ public class AlmacenDaoImp implements AlmacenDao {
 				" WHERE k.IDALMACEN = a.IDALMACEN and k.IDPRODUCTO = p.IDPRODUCTO and k.IDALMACEN="+id);
 	}
 
+	@Override
+	public List<Map<String, Object>> readAll2() {
+		// TODO Auto-generated method stub
+		return  this.jdbcTemplate.queryForList("SELECT*FROM ALMACEN" ); 
+	}
+
+
 }

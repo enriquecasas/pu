@@ -102,9 +102,6 @@ boto -->
 							</table>
 						</div>
 					</div>
-
-					<form role="form"></form>
-
 				</div>
 			</div>
 

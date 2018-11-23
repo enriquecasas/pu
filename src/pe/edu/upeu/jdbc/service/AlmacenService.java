@@ -11,7 +11,10 @@ public interface AlmacenService {
 	int update(Kardex k);
 	int delete(int id);
 	Kardex read(int id);
-	List<Map<String, Object>> readAll();
+	List<Map<String, Object>> readAll(int id);
+	List<Map<String, Object>> readAll2();
+
+
 }
 
 

@@ -63,7 +63,6 @@ boto -->
 				<%
 					int i = 0;
 				%>
-
 				<div class="col-md-12">
 					<div class="app-breadcrumb breadcrumb " style="">
 						<div class="col-auto">
@@ -75,9 +74,11 @@ boto -->
 						<div class="col-auto">
 							<label for="fentrega">Fecha Entrega: <span>${fent}</span></label>
 						</div>
+					</div>
+					</div>
+					<div class="col-md-12">
 						<div class="card">
 							<form action="nuevodetalle" method="post">
-								<div class="col-auto">
 									<div class="app-breadcrumb breadcrumb">
 										<div class="col-lg-5">
 											<select class="selectpicker form-control" id="combo"
@@ -86,23 +87,23 @@ boto -->
 												name="idProducto">
 												<c:forEach items="${lis}" var="op">
 													<option value="${op.idproducto}">${op.nombre}</option>>
-									</c:forEach>
+												</c:forEach>
 											</select>
 										</div>
+
+										<div class="col-auto">
+											<label for="apellido">Cantidad:</label>
+										</div>
+										<div class="col-xs-1">
+											<input type="number" class="form-control" id="cantidad"
+												name="cantProducto" placeholder="">
+										</div>
+										<div class="col-auto">
+											<input type="submit" class="btn btn-success" id="cantidad"
+												value="Agregar">
+										</div>
 									</div>
-									<!--end of col-->
-									<div class="col-auto">
-										<label for="apellido">Cantidad:</label>
-									</div>
-									<div class="col-xs-1">
-										<input type="number" class="form-control" id="cantidad"
-											name="cantProducto" placeholder="">
-									</div>
-									<div class="col-auto">
-										<input type="submit" class="btn btn-success" id="cantidad"
-											value="Agregar">
-									</div>
-								</div>
+								<!--end of col-->
 							</form>
 							<div class="card-body">
 								<table class="table table-bordered" style="max-width: 800px;">
@@ -138,6 +139,7 @@ boto -->
 							</div>
 						</div>
 					</div>
+				
 				</div>
 		</section>
 		</main>
