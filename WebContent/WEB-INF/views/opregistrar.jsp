@@ -67,97 +67,94 @@ boto -->
 				<div class="col-md-12">
 					<div class="app-breadcrumb breadcrumb " style="">
 						<div class="col-auto">
-							<label for="apellido">Código: </label> <span>${cod}</span>
+							<label>Código: </label> <span>${cod}</span>
 						</div>
 						<div class="col-auto">
-							<label for="apellido">Fecha Actual: </label> <span>${fgen}</span>
+							<label>Fecha Actual: </label> <span>${fgen}</span>
 						</div>
 						<div class="col-auto">
-							<label for="apellido">Fecha Entrega</label>
+							<label for="fentrega">Fecha Entrega</label>
 						</div>
-					</div>
-					<div class="card">
-						<div class="app-breadcrumb breadcrumb">
-
-							<div class="col-lg-5">
-								<select class="selectpicker form-control" id="combo"
-									data-container="body" data-live-search="true"
-									title="Selecciona un producto" data-hide-disabled="true">
-									<c:forEach items="${lis}" var="op">
-										<%
-											i++;
-										%>
-										<option id="producto" value="${op.idproducto}">${op.nombre}</option>>
-										
+						<div class="form-group">
+							<div class='input-group date' id='datetimepicker1'>
+								<input type='text' class="form-control" /> <span
+									class="input-group-addon"> <span
+									class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+						<div class="card">
+							<form action="nuevodetalle" method="post">
+								<div class="col-auto">
+									<div class="app-breadcrumb breadcrumb">
+										<div class="col-lg-5">
+											<select class="selectpicker form-control" id="combo"
+												data-container="body" data-live-search="true"
+												title="Selecciona un producto" data-hide-disabled="true"  name="idProducto">
+												<c:forEach items="${lis}" var="op">
+													<%
+														i++;
+													%>
+													<option value="${op.idproducto}">${op.nombre}</option>>
 									</c:forEach>
-	
-								</select>
-							</div>
-							<!--end of col-->
-							<div class="col-auto">
-								<label for="apellido">Cantidad:</label>
-							</div>
-							<div class="col-xs-1">
-								<input type="text" class="form-control" id="cantidad"
-									placeholder="">
-							</div>
-							<div class="col-auto">
-								<input type="submit" class="btn btn-success" id="cantidad"
-									value="Agregar">
-							</div>
-						</div>
-
-
-						<div class="card-body">
-							<table class="table table-bordered" style="max-width: 800px;">
-								<thead>
-									<tr>
-										<th scope="col">#</th>
-										<th scope="col">Código</th>
-										<th scope="col">Producto</th>
-										<th scope="col">Cantidad</th>
-
-										<th scope="col" colspan="2">Opcion</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:forEach items="${lis}" var="op">
-										<%
-											i++;
-										%>
+											</select>
+										</div>
+									</div>
+									<!--end of col-->
+									<div class="col-auto">
+										<label for="apellido">Cantidad:</label>
+									</div>
+									<div class="col-xs-1">
+										<input type="number" class="form-control" id="cantidad" name="cantProducto"
+											placeholder="">
+									</div>
+									<div class="col-auto">
+										<input type="submit" class="btn btn-success" id="cantidad"
+											value="Agregar">
+									</div>
+								</div>
+							</form>
+							<div class="card-body">
+								<table class="table table-bordered" style="max-width: 800px;">
+									<thead>
 										<tr>
-											<!--  <th scope="row"><%=i%></th>
-											<td>${op.codigo}</td>
-											<td>${op.nombre}</td>
-											<td>${op.idproducto}</td>
-											<td><a href="upd/1" style="color: blue;"><i
-													class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-											<td><a href="del/1" style="color: red;"><i
-													class="fa fa-trash" aria-hidden="true"></i></a></td>-->
+											<th scope="col">#</th>
+											<th scope="col">Código</th>
+											<th scope="col">Producto</th>
+											<th scope="col">Cantidad</th>
+
+											<th scope="col" colspan="2">Opcion</th>
 										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
+									</thead>
+									<tbody>
+										<c:forEach items="${listaDetalle}" var="dt">
+											<%
+												i++;
+											%>
+											<tr>
+												<th scope="row"><%=i%></th>
+												<td>${dt.codigo}</td>
+												<td>${dt.nombre}</td>
+												<td>${dt.cantidad}</td>
+												<td><a href="upd/1" style="color: blue;"><i
+														class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+												<td><a href="del/1" style="color: red;"><i
+														class="fa fa-trash" aria-hidden="true"></i></a></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
-				<form role="form"></form>
-
-			</div>
-	</div>
-
-	</section>
-	</main>
+		</section>
+		</main>
 	</div>
 
 	<script>
 		$('#datepicker').datepicker({
-			dateFormat : 'yyyy',
-			uiLibrary : 'bootstrap4'
-		});
-	</script>
-	<script>
-		$('#datepicker2').datepicker({
+			format : 'dd-MM-yyyy',
 			uiLibrary : 'bootstrap4'
 		});
 	</script>

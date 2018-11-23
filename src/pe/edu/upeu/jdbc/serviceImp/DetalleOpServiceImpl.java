@@ -1,5 +1,8 @@
 package pe.edu.upeu.jdbc.serviceImp;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,8 +11,8 @@ import pe.edu.upeu.jdbc.entity.DetalleOp;
 import pe.edu.upeu.jdbc.service.DetalleOpService;
 
 @Service
-public class DetalleOpServiceImpl implements DetalleOpService{
-	
+public class DetalleOpServiceImpl implements DetalleOpService {
+
 	@Autowired
 	private DetalleOpDao detalleOpDao;
 
@@ -17,6 +20,15 @@ public class DetalleOpServiceImpl implements DetalleOpService{
 	public void saveDetalleOp(DetalleOp detalleOp) {
 		detalleOpDao.saveDetalleOp(detalleOp);
 	}
-	
-	
+
+	@Override
+	public List<Map<String, Object>> readAll(int id) {
+		return detalleOpDao.readAll(id);
+	}
+
+	@Override
+	public int create(DetalleOp d) {
+		return detalleOpDao.create(d);
+	}
+
 }

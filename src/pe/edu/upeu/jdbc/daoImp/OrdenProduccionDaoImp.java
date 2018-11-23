@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.jdbc.dao.OrdenProduccionDao;
@@ -52,7 +51,7 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 	@Override
 	public List<Map<String, Object>> readAllop() {
 		// TODO Auto-generated method stub
-		return jdbcTemplate.queryForList("Select * from orden_produccion");
+		return jdbcTemplate.queryForList("SELECT*FROM ORDEN_PRODUCCION");
 	}
 
 	@Override
