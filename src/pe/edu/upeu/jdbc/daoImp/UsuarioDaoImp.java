@@ -26,27 +26,23 @@ public class UsuarioDaoImp implements UsuarioDao{
 
 	@Override
 	public int create(Usuario u) {
-		// TODO Auto-generated method stub	
 		String sql = "INSERT INTO usuario(idusuario,nom_user,clave,estado) values(null,?,?,?)";
 		return jdbcTemplate.update(sql,u.getNomuser(),u.getClave(),u.getEstado());
 	}
 
 	@Override
 	public int update(Usuario u) {
-		// TODO Auto-generated method stub
 		return jdbcTemplate.update("UPDATE usuario SET "+u.getClave()+" WHERE idusuario="+u.getIduser()+")");
 	}
 
 	@Override
 	public int delete(int id) {
-		// TODO Auto-generated method stub
 		String sql = "DELETE FROM usuario WHERE idusuario=?";
 		return jdbcTemplate.update(sql,id);
 	}
 
 	@Override
 	public Usuario read(int id) {		
-		// TODO Auto-generated method stub
 		String sql = "select * from contact where id = ?";
 		   Usuario user = jdbcTemplate.queryForObject(sql, new UsuarioRowMapper(), id);
 		return user;

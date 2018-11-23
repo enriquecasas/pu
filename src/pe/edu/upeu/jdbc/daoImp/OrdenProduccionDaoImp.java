@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.jdbc.dao.OrdenProduccionDao;
@@ -31,8 +32,8 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 
 	@Override
 	public int update(OrdenProduccion r) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "update orden_produccion set ";
+		return jdbcTemplate.update(sql);
 	}
 
 	@Override
@@ -44,8 +45,9 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 
 	@Override
 	public OrdenProduccion read(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * from orden_produccion where id = ?";
+		OrdenProduccion op = jdbcTemplate.queryForObject(sql, new OrdenProduccionRowMapper(), id);
+		return op;
 	}
 
 	@Override
@@ -57,8 +59,7 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 	@Override
 	public List<Map<String, Object>> getLast() {
 		// TODO Auto-generated method stub
-		String sql = "select * from ORDEN_PRODUCCION"
-				+ " where IDOP = ( select max(IDOP) from ORDEN_PRODUCCION )";
+		String sql = "select * from ORDEN_PRODUCCION" + " where IDOP = ( select max(IDOP) from ORDEN_PRODUCCION )";
 		return jdbcTemplate.queryForList(sql);
 	}
 
