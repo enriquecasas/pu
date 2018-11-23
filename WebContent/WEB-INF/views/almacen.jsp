@@ -67,7 +67,7 @@ boto -->
 						<form action="almacenbuscar" method="post">
 							<div class="app-breadcrumb breadcrumb " style="">
 								<div class="col-lg-5">
-									<select class="selectpicker form-control input-material" id="combo"
+									<select class="selectpicker form-control " id="combo"
 										data-container="body" data-live-search="true"
 										title="Selecciona un almacén" data-hide-disabled="true"
 										name="idProducto">
@@ -106,15 +106,14 @@ boto -->
 											<td>${pro.codigo}</td>
 											<td>${pro.nombre}</td>
 											<td>${pro.stock}</td>
-											<td><a href="#" style="color: blue;"><i
-													class="fa fa-eye" aria-hidden="true"></i></a></td>
+											<td><a href="#" style="color: black;"><i
+													class="fa fa-eye fa-1x" aria-hidden="true"></i></a></td>
 										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
 						</div>
 					</div>
-					<form role="form"></form>
 				</div>
 			</div>
 		</section>
