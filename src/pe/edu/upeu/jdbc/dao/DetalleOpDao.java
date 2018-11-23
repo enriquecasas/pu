@@ -7,6 +7,12 @@ import pe.edu.upeu.jdbc.entity.DetalleOp;
 
 public interface DetalleOpDao {
 	void saveDetalleOp(DetalleOp d);
+
 	List<Map<String, Object>> readAll(int id);
+
 	int create(DetalleOp d);
+
+	List<Map<String, Object>> read(int id);
+
+	int delete(int id);
 }

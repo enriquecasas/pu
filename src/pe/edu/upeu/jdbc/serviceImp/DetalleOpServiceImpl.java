@@ -31,4 +31,14 @@ public class DetalleOpServiceImpl implements DetalleOpService {
 		return detalleOpDao.create(d);
 	}
 
+	@Override
+	public List<Map<String, Object>> read(int id) {
+		return detalleOpDao.read(id);
+	}
+
+	@Override
+	public int delete(int id) {
+		return 0;
+	}
+
 }

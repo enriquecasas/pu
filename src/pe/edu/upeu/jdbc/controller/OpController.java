@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pe.edu.upeu.jdbc.entity.DetalleOp;
 import pe.edu.upeu.jdbc.entity.OrdenProduccion;
+import pe.edu.upeu.jdbc.entity.Usuario;
 import pe.edu.upeu.jdbc.service.DetalleOpService;
 import pe.edu.upeu.jdbc.service.OrdenProduccionService;
 import pe.edu.upeu.jdbc.service.ProductoService;
@@ -55,12 +56,13 @@ public class OpController {
 	}
 
 	@PostMapping("/opregistration")
-	public String opregistration(Model model, OrdenProduccion op, HttpSession session) throws SQLException {
+	public String opregistration(Model model, OrdenProduccion op, HttpSession session, HttpServletRequest request) throws SQLException {
 		op.setIdusuario(Integer.parseInt(session.getAttribute("iduser").toString()));
 		opp.create(op);
 		session.setAttribute("idOrden", opp.getLast().get(0).values().toArray()[0]);
 		session.setAttribute("cod", opp.getLast().get(0).values().toArray()[2]);
 		session.setAttribute("fgen", opp.getLast().get(0).values().toArray()[3]);
+		session.setAttribute("fent", opp.getLast().get(0).values().toArray()[4]);
 		//md.addObject("listaDetalle", des.readAll());
 		return "redirect:/main/opregistrar";
 	}
@@ -77,4 +79,21 @@ public class OpController {
 		md.addObject("lis", pro.readAll());
 		return md;
 	}
+	
+	@GetMapping("/updaop/{id}")
+	public ModelAndView detalleupdate(Model model, @PathVariable("id") int id) {
+		System.out.println(des.read(id).toString());
+		ModelAndView medit = new ModelAndView();
+		medit.setViewName("editarOP");
+		medit.addObject("productList", pro.readAll());
+		medit.addObject("listaEdit", des.read(id));
+		return medit;
+	}
+	
+	@GetMapping("/editarOP/{id}")
+	public String opEdit(Model model) throws SQLException {
+		return "redirect:/main/editarOP";
+	}
+	
 }
+

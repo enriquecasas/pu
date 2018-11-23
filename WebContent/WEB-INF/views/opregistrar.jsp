@@ -63,7 +63,7 @@ boto -->
 				<%
 					int i = 0;
 				%>
-			
+
 				<div class="col-md-12">
 					<div class="app-breadcrumb breadcrumb " style="">
 						<div class="col-auto">
@@ -73,15 +73,7 @@ boto -->
 							<label>Fecha Actual: </label> <span>${fgen}</span>
 						</div>
 						<div class="col-auto">
-							<label for="fentrega">Fecha Entrega</label>
-						</div>
-						<div class="form-group">
-							<div class='input-group date' id='datetimepicker1'>
-								<input type='text' class="form-control" /> <span
-									class="input-group-addon"> <span
-									class="glyphicon glyphicon-calendar"></span>
-								</span>
-							</div>
+							<label for="fentrega">Fecha Entrega: <span>${fent}</span></label>
 						</div>
 						<div class="card">
 							<form action="nuevodetalle" method="post">
@@ -90,11 +82,9 @@ boto -->
 										<div class="col-lg-5">
 											<select class="selectpicker form-control" id="combo"
 												data-container="body" data-live-search="true"
-												title="Selecciona un producto" data-hide-disabled="true"  name="idProducto">
+												title="Selecciona un producto" data-hide-disabled="true"
+												name="idProducto">
 												<c:forEach items="${lis}" var="op">
-													<%
-														i++;
-													%>
 													<option value="${op.idproducto}">${op.nombre}</option>>
 									</c:forEach>
 											</select>
@@ -105,8 +95,8 @@ boto -->
 										<label for="apellido">Cantidad:</label>
 									</div>
 									<div class="col-xs-1">
-										<input type="number" class="form-control" id="cantidad" name="cantProducto"
-											placeholder="">
+										<input type="number" class="form-control" id="cantidad"
+											name="cantProducto" placeholder="">
 									</div>
 									<div class="col-auto">
 										<input type="submit" class="btn btn-success" id="cantidad"
@@ -136,9 +126,10 @@ boto -->
 												<td>${dt.codigo}</td>
 												<td>${dt.nombre}</td>
 												<td>${dt.cantidad}</td>
-												<td><a href="upd/1" style="color: blue;"><i
-														class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-												<td><a href="del/1" style="color: red;"><i
+												<td><a href="upd/${dt.iddetalleop}"
+													style="color: blue;"><i class="fa fa-pencil-square-o"
+														aria-hidden="true"></i></a></td>
+												<td><a href="del/${dt.iddetalleop}" style="color: red;"><i
 														class="fa fa-trash" aria-hidden="true"></i></a></td>
 											</tr>
 										</c:forEach>
@@ -151,16 +142,8 @@ boto -->
 		</section>
 		</main>
 	</div>
-
-	<script>
-		$('#datepicker').datepicker({
-			format : 'dd-MM-yyyy',
-			uiLibrary : 'bootstrap4'
-		});
-	</script>
 	<!-- Essential javascripts for application to work-->
 	<!-- JavaScript files-->
-	"WebContent/recursos/js/bootstrap-select.js"
 	<script src="${urlrecursos}/vendor/jquery/jquery.min.js"></script>
 	<script src="${urlrecursos}/vendor/jquery/jquery.min.js"></script>
 	<script src="${urlrecursos}/vendor/popper.js/umd/popper.min.js"></script>
@@ -184,7 +167,6 @@ boto -->
 	<!-- <script src="${urlrecursos}/js/bootstrap-select.js"></script>-->
 	<!-- Google analytics script-->
 	<script type="${urlrecursos}/text/javascript">
-	
       if(document.location.hostname == 'pratikborsadiya.in') {
       	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -194,5 +176,4 @@ boto -->
       	ga('send', 'pageview');
       }
     </script>
-
 </body>
