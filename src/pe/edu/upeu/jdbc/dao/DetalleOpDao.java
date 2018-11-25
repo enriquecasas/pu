@@ -15,4 +15,6 @@ public interface DetalleOpDao {
 	List<Map<String, Object>> read(int id);
 
 	int delete(int id);
+	
+	int update(DetalleOp d);
 }
