@@ -127,11 +127,8 @@ boto -->
 												<td>${dt.codigo}</td>
 												<td>${dt.nombre}</td>
 												<td>${dt.cantidad}</td>
-												<td><a href="upd/${dt.iddetalleop}"
-													style="color: blue;"><i class="fa fa-pencil-square-o"
-														aria-hidden="true"></i></a></td>
-												<td><a href="delet/${dt.idproducto}" style="color: red;"><i
-														class="fa fa-trash" aria-hidden="true"></i></a></td>
+												<td><a href="upd/${dt.iddetalleop}" style="color: blue;"><i class="fa fa-pencil-square-o" 													aria-hidden="true"></i></a></td>
+												<td><a href="puede/${dt.iddetalleop}" style="color: red;"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
 											</tr>
 										</c:forEach>
 									</tbody>

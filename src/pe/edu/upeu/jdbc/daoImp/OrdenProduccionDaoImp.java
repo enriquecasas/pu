@@ -69,8 +69,8 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 	@Override
 	public int deletePro(int id) {
 		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "aqui estas");
-		String sql = "DELETE FROM ORDEN_PRODUCCION WHERE IDPRODUCTO=?";
+		System.out.println("aqui estas22");
+		String sql = "DELETE FROM detalle_op WHERE iddetalleop=?";
 		return jdbcTemplate.update(sql, id);
 	}
 

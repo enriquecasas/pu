@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pe.edu.upeu.jdbc.entity.DetalleOp;
 import pe.edu.upeu.jdbc.entity.OrdenProduccion;
-import pe.edu.upeu.jdbc.entity.Usuario;
 import pe.edu.upeu.jdbc.service.DetalleOpService;
 import pe.edu.upeu.jdbc.service.OrdenProduccionService;
 import pe.edu.upeu.jdbc.service.ProductoService;
@@ -42,16 +41,22 @@ public class OpController {
 
 	@GetMapping("/dele/{id}")
 	public String opdelete(Model model, @PathVariable("id") int idop) {
+		
 		opp.delete(idop);
 		return "redirect:/main/op";
 	}
-	@GetMapping("/delet/{id}")
-	public String delet(Model model, @PathVariable("id") int id) {
+	/*
+	@GetMapping("/puede/{id}")
+	public String delet(@PathVariable("id") int id) {
+		System.out.println("hola:"id);
 		opp.deletePro(id);
 		return "main/opregistrar";
+	}*/
+	@GetMapping("/puede/{id}")
+	public String delet(Model model, @PathVariable("id") int idop) {
+		      opp.deletePro(idop);
+		return "redirect:/main/opregistrar";
 	}
-	
-
 	@GetMapping("/opregistrar")
 	public ModelAndView opregistrar(Model model, OrdenProduccion op) throws SQLException {
 			ModelAndView mu = new ModelAndView();
@@ -60,7 +65,6 @@ public class OpController {
 	
 			return mu;
 	}
-
 	@PostMapping("/opregistration")
 	public String opregistration(Model model, OrdenProduccion op, HttpSession session, HttpServletRequest request) throws SQLException {
 		op.setIdusuario(Integer.parseInt(session.getAttribute("iduser").toString()));
@@ -71,8 +75,7 @@ public class OpController {
 		session.setAttribute("fent", opp.getLast().get(0).values().toArray()[4]);
 		//md.addObject("listaDetalle", des.readAll());
 		return "redirect:/main/opregistrar";
-	}
-	
+	}	
 	@PostMapping("/nuevodetalle")
 	public ModelAndView nuevodetalle(Model model, DetalleOp det, HttpSession session, HttpServletRequest request) throws SQLException {
 		det.setIdop(Integer.parseInt(session.getAttribute("idOrden").toString()));
