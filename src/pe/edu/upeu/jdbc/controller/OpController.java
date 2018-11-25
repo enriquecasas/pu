@@ -58,11 +58,12 @@ public class OpController {
 		return "redirect:/main/opregistrar";
 	}
 	@GetMapping("/opregistrar")
-	public ModelAndView opregistrar(Model model, OrdenProduccion op) throws SQLException {
+	public ModelAndView opregistrar(Model model, OrdenProduccion op, HttpSession session, HttpServletRequest request) throws SQLException {
 			ModelAndView mu = new ModelAndView();
 			mu.setViewName("opregistrar");
 			mu.addObject("lis", pro.readAll());
-	
+			System.out.println("registrarion");
+			mu.addObject("listaDetalle", des.readAll(Integer.parseInt(session.getAttribute("idOrden").toString())));
 			return mu;
 	}
 	@PostMapping("/opregistration")
@@ -83,8 +84,10 @@ public class OpController {
 		des.create(det);
 		ModelAndView md = new ModelAndView();
 		md.setViewName("opregistrar");
-		md.addObject("listaDetalle", des.readAll(Integer.parseInt(session.getAttribute("idOrden").toString())));
 		md.addObject("lis", pro.readAll());
+		System.out.println("nuevo detalle");
+		md.addObject("listaDetalle", des.readAll(Integer.parseInt(session.getAttribute("idOrden").toString())));
+		
 		return md;
 	}
 	
