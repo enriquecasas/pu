@@ -53,7 +53,7 @@ public class ProductoDaoImp implements ProductoDao {
 		// TODO Auto-generated method stub
 		 return this.jdbcTemplate.queryForList("SELECT P.IDPRODUCTO idproducto,P.CODIGO codigo,P.NOMBRE nombre " + 
 		 		"FROM KARDEX K, PRODUCTO P, ALMACEN A " + 
-		 		"where P.IDPRODUCTO = K.IDPRODUCTO AND K.IDALMACEN = A.IDALMACEN AND A.IDALMACEN=4");
+		 		"where P.IDPRODUCTO = K.IDPRODUCTO AND K.IDALMACEN = A.IDALMACEN AND A.IDALMACEN=3");
 	}
 
 }
