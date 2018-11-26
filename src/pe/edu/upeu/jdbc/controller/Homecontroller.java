@@ -13,4 +13,8 @@ public String index(Model model) {
 	model.addAttribute("usuario", new Usuario());
 	return "index";
 }
+public String home(Model model) {
+	
+	return "main";
+}
 }

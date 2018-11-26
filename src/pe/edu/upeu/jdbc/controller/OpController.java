@@ -53,7 +53,7 @@ public class OpController {
 		return "main/opregistrar";
 	}*/
 	@GetMapping("/puede/{id}")
-	public String delet(Model model, @PathVariable("id") int idop) {
+	public String delet( @PathVariable("id") int idop) {
 		      opp.deletePro(idop);
 		return "redirect:/main/opregistrar";
 	}
