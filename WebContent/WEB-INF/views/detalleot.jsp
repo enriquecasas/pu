@@ -112,7 +112,7 @@ boto -->
 						<div class="app-breadcrumb breadcrumb " style="">
 							<div class="col-auto">
 								<div class="for-group">
-									<a href="#" class="btn btn-success">Imprimir</a>
+									<a href="#" class="btn btn-success">Transferir</a>
 								</div>
 							</div>
 							<div class="col-auto">
