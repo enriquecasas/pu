@@ -59,5 +59,8 @@
 		class="pe.edu.upeu.jdbc.daoImp.AlmacenDaoImp">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
-	
+	<bean id="detalleotDao"
+		class="pe.edu.upeu.jdbc.daoImp.DetalleOtDaoImp">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
 </beans>

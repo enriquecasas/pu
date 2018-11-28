@@ -64,46 +64,28 @@ boto -->
 					int i = 0;
 				%>
 				<div class="col-md-12">
-					<div class="app-breadcrumb breadcrumb " style="">
-						<div class="col-auto">
-							<label>Código: </label> <span>${cod}</span>
-						</div>
-						<div class="col-auto">
-							<label>Fecha Actual: </label> <span>${fgen}</span>
-						</div>
-						<div class="col-auto">
-							<label for="fentrega">Fecha Entrega: <span>${fent}</span></label>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-12">
 					<div class="card">
 						<div class="card-body">
 							<table class="table table-bordered" style="max-width: 800px;">
 								<thead>
 									<tr>
 										<th scope="col">#</th>
-										<th scope="col">Almacen</th>
 										<th scope="col">Producto</th>
 										<th scope="col">Cantidad</th>
 										<th scope="col" >unidad</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${listaopot}" var="dt">
+									<c:forEach items="${listDet}" var="dt">
 										<%
 											i++;
 										%>
 										<tr>
 											<th scope="row"><%=i%></th>
 											<td>${dt.codigo}</td>
-											<td>${dt.nombre}</td>
+											
 											<td>${dt.cantidad}</td>
-											<td><div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox"
-														id="inlineCheckbox1" value="option1"> <label
-														class="form-check-label" for="inlineCheckbox1"></label>
-												</div></td>
+											<td>${dt.nombre}</td>
 										</tr>
 									</c:forEach>
 								</tbody>

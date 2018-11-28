@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.jdbc.dao.DetalleotDao;
 import pe.edu.upeu.jdbc.entity.DetalleOt;
-
+@Repository
 public class DetalleOtDaoImp implements DetalleotDao {
 	private JdbcTemplate jdbcTemplate;
 
