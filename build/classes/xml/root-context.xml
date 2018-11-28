@@ -9,12 +9,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
-		
-		<!-- Ruta de paquetes -->
-	<context:component-scan base-package="pe.edu.upeu.jdbc" />
-	
+
+	<!-- Ruta de paquetes -->
+	<context:component-scan
+		base-package="pe.edu.upeu.jdbc" />
+
 	<!-- dataSource configuration -->
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="oracle.jdbc.OracleDriver"></property>
 		<property name="url"
@@ -22,21 +24,31 @@
 		<property name="username" value="bd_final"></property>
 		<property name="password" value="123"></property>
 	</bean>
-	
-	<!--  jdbcTemplate uses dataSource-->
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+
+	<!-- jdbcTemplate uses dataSource -->
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	
-	<!-- Configuracion de los DaoIMp-->
-	<bean id="usuarioDao" class="pe.edu.upeu.jdbc.daoImp.UsuarioDaoImp"> 
-		<property name="jdbcTemplate" ref="jdbcTemplate" /> 
+
+	<!-- Configuracion de los DaoImp -->
+	<bean id="usuarioDao"
+		class="pe.edu.upeu.jdbc.daoImp.UsuarioDaoImp">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
-	<bean id="rolDao" class="pe.edu.upeu.jdbc.daoImp.RolDaoImp"> 
-		<property name="jdbcTemplate" ref="jdbcTemplate" /> 
-	</bean> 
-	<bean id="ordenProduccionDao" class="pe.edu.upeu.jdbc.daoImp.OrdenProduccionDaoImp"> 
-		<property name="jdbcTemplate" ref="jdbcTemplate" /> 
-	</bean> 
+	
+	<bean id="rolDao" class="pe.edu.upeu.jdbc.daoImp.RolDaoImp">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="ordenProduccionDao"
+		class="pe.edu.upeu.jdbc.daoImp.OrdenProduccionDaoImp">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="ordenTrabajoDao"
+		class="pe.edu.upeu.jdbc.daoImp.OrdenTrabajoDaoImp">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
 
 </beans>

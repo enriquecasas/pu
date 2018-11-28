@@ -3,11 +3,9 @@ package pe.edu.upeu.jdbc.daoImp;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.JOptionPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upeu.jdbc.dao.OrdenProduccionDao;

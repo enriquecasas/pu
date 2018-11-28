@@ -14,6 +14,7 @@ import pe.edu.upeu.jdbc.service.OrdenProduccionService;
 public class OrdenProduccionServiceImp implements OrdenProduccionService {
 	@Autowired
 	private OrdenProduccionDao ordenProduccionDao;
+
 	@Override
 	public int create(OrdenProduccion r) {
 		return ordenProduccionDao.create(r);
@@ -21,37 +22,31 @@ public class OrdenProduccionServiceImp implements OrdenProduccionService {
 
 	@Override
 	public int update(OrdenProduccion r) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int delete(int id) {
-		// TODO Auto-generated method stub
 		return ordenProduccionDao.delete(id);
 	}
 
 	@Override
 	public OrdenProduccion read(int id) {
-		// TODO Auto-generated method stub
 		return ordenProduccionDao.read(id);
 	}
 
 	@Override
 	public List<Map<String, Object>> readAllop() {
-		// TODO Auto-generated method stub
 		return ordenProduccionDao.readAllop();
 	}
 
 	@Override
 	public List<Map<String, Object>> getLast() {
-		// TODO Auto-generated method stub
 		return ordenProduccionDao.getLast();
 	}
 
 	@Override
 	public int deletePro(int id) {
-		// TODO Auto-generated method stub
 		return ordenProduccionDao.deletePro(id);
 	}
 

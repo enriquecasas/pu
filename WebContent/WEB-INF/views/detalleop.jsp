@@ -66,13 +66,15 @@ boto -->
 				<div class="col-md-12">
 					<div class="app-breadcrumb breadcrumb " style="">
 						<div class="col-auto">
-							<label>Código: </label> <span>${cod}</span>
+							<label>Código: </label> <span>${code}</span>
 						</div>
 						<div class="col-auto">
-							<label>Fecha Actual: </label> <span>${fgen}</span>
+							<label>Fecha Actual: <input name="fegene" type="text"
+								value="${fgene}" disabled="disabled"></label> 
 						</div>
 						<div class="col-auto">
-							<label for="fentrega">Fecha Entrega: <span>${fent}</span></label>
+							<label for="fentrega">Fecha Entrega: <input type="text"
+								value="${fentr}" disabled="disabled"></label>
 						</div>
 					</div>
 				</div>
@@ -86,8 +88,7 @@ boto -->
 										<th scope="col">Código</th>
 										<th scope="col">Producto</th>
 										<th scope="col">Cantidad</th>
-
-										<th scope="col" colspan="0">Set</th>
+										<th scope="col">Set</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -102,8 +103,7 @@ boto -->
 											<td>${dt.cantidad}</td>
 											<td><div class="form-check form-check-inline">
 													<input class="form-check-input" type="checkbox"
-														id="inlineCheckbox1" value="option1"> <label
-														class="form-check-label" for="inlineCheckbox1"></label>
+														id="inlineCheckbox1" name="producto" value="${dt.codigo}">
 												</div></td>
 										</tr>
 									</c:forEach>
@@ -113,14 +113,17 @@ boto -->
 						<div class="app-breadcrumb breadcrumb " style="">
 							<div class="col-auto">
 								<div class="for-group">
-									<a href="#" class="btn btn-success">Generar OT</a>
+									<a href="/pu/main/registraOT/${idop}" class="btn btn-succes"
+										type="button">Generar OT</a>
 								</div>
 							</div>
-							<div class="col-auto">
-								<div class="for-group">
-									<a href="#"class="btn btn-danger" >Cancelar</a>
+							<form action="" method="post">
+								<div class="col-auto">
+									<div class="for-group">
+										<a href="#" class="btn btn-danger">Cancelar</a>
+									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -163,4 +166,5 @@ boto -->
       	ga('send', 'pageview');
       }
     </script>
+
 </body>

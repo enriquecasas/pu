@@ -30,7 +30,7 @@
 		class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	<!-- Configuracion de los DaoIMp -->
+	<!-- Configuracion de los DaoImp -->
 	<bean id="usuarioDao"
 		class="pe.edu.upeu.jdbc.daoImp.UsuarioDaoImp">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
@@ -44,16 +44,20 @@
 		class="pe.edu.upeu.jdbc.daoImp.OrdenProduccionDaoImp">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
+	
+	<bean id="ordenTrabajoDao"
+		class="pe.edu.upeu.jdbc.daoImp.OrdenTrabajoDaoImp">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
 	<bean id="productoDao"
 		class="pe.edu.upeu.jdbc.daoImp.ProductoDaoImp">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
+	
 	<bean id="almacenDao"
 		class="pe.edu.upeu.jdbc.daoImp.AlmacenDaoImp">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
-
-
-
-
+	
 </beans>
