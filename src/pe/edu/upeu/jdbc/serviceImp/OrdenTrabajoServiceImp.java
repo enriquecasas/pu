@@ -44,4 +44,9 @@ public class OrdenTrabajoServiceImp implements OrdenTrabajoService {
 		return ordenTrabajoDao.readAllop();
 	}
 
+	@Override
+	public List<Map<String, Object>> getLast() {
+		return ordenTrabajoDao.getLast();
+	}
+
 }

@@ -98,15 +98,16 @@ boto -->
 										<tr>
 											<th scope="row"><%=i%></th>
 											<td>${dt.codigo}</td>
-											<td hidden="true">${dt.idproducto}</td>
 											<td>${dt.nombre}</td>
 											<td>${dt.cantidad}</td>
-											<td><a href="/pu/main/registrarDOT"
+											<td><a href="/pu/main/registraOT/${idop}"
 												style="color: green;"><i class="fa fa-check"
 													aria-hidden="true"></i></a></td>
 										</tr>
-										<input name="idprod" readonly="readonly"
+										<input name="idprod" disabled="disabled" hidden="true"
 											value="${dt.idproducto}">
+										<input name="cant" disabled="disabled" hidden="true"
+											value="${dt.cantidad}">
 									</c:forEach>
 								</tbody>
 							</table>

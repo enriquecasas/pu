@@ -18,5 +18,7 @@ public interface OrdenTrabajoService {
 	OrdenTrabajo read(int id);
 
 	List<Map<String, Object>> readAllop();
+	
+	List<Map<String, Object>> getLast();
 
 }

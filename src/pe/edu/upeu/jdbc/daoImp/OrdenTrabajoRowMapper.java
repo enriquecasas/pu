@@ -19,7 +19,7 @@ public class OrdenTrabajoRowMapper implements RowMapper<OrdenTrabajo> {
 		ot.setCodigo(rs.getString(5));
 		ot.setEstado(rs.getInt(6));
 		ot.setIdusuario(rs.getInt(7));
-		return null;
+		return ot;
 	}
 
 }

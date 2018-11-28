@@ -56,4 +56,10 @@ public class OrdenTrabajoDaoImp implements OrdenTrabajoDao {
 		return null;
 	}
 
+	@Override
+	public List<Map<String, Object>> getLast() {
+		String sql = "select IDOT from ORDEN_TRABAJO  where IDOT = ( select max(IDOT) from ORDEN_TRABAJO )";
+		return jdbcTemplate.queryForList(sql);
+	}
+
 }

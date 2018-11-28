@@ -7,10 +7,13 @@ import pe.edu.upeu.jdbc.entity.DetalleOt;
 
 public interface DetalleOtService {
 	int create(DetalleOt u);
-	int update(DetalleOt u);
-	int delete(int id);
-	DetalleOt read(int id);
-	List<Map<String, Object>> readAll();
 
+	int update(DetalleOt u);
+
+	int delete(int id);
+
+	DetalleOt read(int id);
+
+	List<Map<String, Object>> readAll();
 
 }

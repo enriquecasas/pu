@@ -23,31 +23,27 @@ public class DetalleOtDaoImp implements DetalleotDao {
 
 	@Override
 	public int create(DetalleOt u) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "{call SP_REGISTARDETOT(?,?,?)}";
+		return jdbcTemplate.update(sql, u.getIdproducto(), u.getIdot(), u.getCantidad());
 	}
 
 	@Override
 	public int update(DetalleOt u) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int delete(int id) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public DetalleOt read(int id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<Map<String, Object>> readAll() {
-		// TODO Auto-generated method stub
 		return jdbcTemplate.queryForList("SELECT " + "D1.IDPRODUCTO," + "P.NOMBRE, " + "sum(D2.CANTIDAD) as total,"
 				+ "U.NOMBRE " + "FROM DETALLE_RP D1, DETALLE_OT D2, PRODUCTO P,KARDEX K, ALMACEN A,UNIDAD_MEDIDA U "
 				+ "WHERE D2.IDDETALLERP=D1.IDDETALLERP AND D1.IDPRODUCTO = P.IDPRODUCTO "

@@ -6,9 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pe.edu.upeu.jdbc.dao.DetalleOpDao;
 import pe.edu.upeu.jdbc.dao.DetalleotDao;
-import pe.edu.upeu.jdbc.entity.DetalleOp;
 
 import pe.edu.upeu.jdbc.entity.DetalleOt;
 import pe.edu.upeu.jdbc.service.DetalleOtService;
@@ -20,13 +18,13 @@ public class DetalleOtServiceImp implements DetalleOtService {
 	@Override
 	public int create(DetalleOt u) {
 		// TODO Auto-generated method stub
-		return 0;
+		return detalleotDao.create(u);
 	}
 
 	@Override
 	public int update(DetalleOt u) {
 		// TODO Auto-generated method stub
-		return detalleotDao.update();
+		return detalleotDao.update(u);
 	}
 
 	@Override
