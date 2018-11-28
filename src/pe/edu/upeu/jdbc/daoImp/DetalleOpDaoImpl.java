@@ -48,7 +48,6 @@ public class DetalleOpDaoImpl implements DetalleOpDao {
 
 	@Override
 	public List<Map<String, Object>> read(int id) {
-		
 		String sql = "select * from detalle_op where idop = ?";
 		return jdbcTemplate.queryForList(sql, id);
 	}

@@ -1,7 +1,5 @@
 package pe.edu.upeu.jdbc.entity;
 
-import java.sql.Date;
-
 public class OrdenProduccion {
 
 	private int idop;
@@ -12,7 +10,6 @@ public class OrdenProduccion {
 	private int estado;
 
 	public OrdenProduccion() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public OrdenProduccion(int idusuario, String fgeneracion, String fentrega) {

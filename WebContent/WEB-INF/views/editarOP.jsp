@@ -70,11 +70,11 @@ boto -->
 							<label>Código: </label> <span> ${code} </span>
 						</div>
 						<div class="col-auto">
-							<label>Fecha Actual: </label> <span> ${fgen} </span>
+							<label>Fecha Actual: </label> <span> ${fgene} </span>
 						</div>
 						<div class="col-auto">
 							<label for="fentrega">Fecha Entrega: <span>
-									${fent} </span></label>
+									${fentr} </span></label>
 						</div>
 						<div class="card">
 							<form action="editarOP" method="get">
