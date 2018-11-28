@@ -15,6 +15,6 @@ public String index(Model model) {
 }
 public String home(Model model) {
 	
-	return "main";
+	return "/main";
 }
 }

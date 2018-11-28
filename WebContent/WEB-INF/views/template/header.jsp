@@ -7,7 +7,7 @@
 			class="sidenav-header d-flex align-items-center justify-content-center">
 			<!-- User Info-->
 			<div class="sidenav-header-inner text-center">
-				<img src="../recursos/img/avatar-7.jpg" alt="person"
+				<img src="../recursos/img/avatar-7.jpg" alt="persona"
 					class="img-fluid rounded-circle">
 				<h2 class="h5">${user}</h2>
 				<span>${iduser}</span>  

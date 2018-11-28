@@ -57,10 +57,63 @@ boto -->
 	<div class="page">
 		<jsp:include page="template/header.jsp"></jsp:include>
 		<main class="app-content">
-		<h1>soy op ot</h1>
+		<h1>soy ot desde op</h1>
 		<section class="dashboard-counts section-padding">
-			<div class="container-fluid">Hola soy op ot</div>
-			
+			<div class="container-fluid">
+				<%
+					int i = 0;
+				%>
+				<div class="col-md-12">
+					<div class="app-breadcrumb breadcrumb " style="">
+						<div class="col-auto">
+							<label>Código: </label> <span>${cod}</span>
+						</div>
+						<div class="col-auto">
+							<label>Fecha Actual: </label> <span>${fgen}</span>
+						</div>
+						<div class="col-auto">
+							<label for="fentrega">Fecha Entrega: <span>${fent}</span></label>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-body">
+							<table class="table table-bordered" style="max-width: 800px;">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Código</th>
+										<th scope="col">Producto</th>
+										<th scope="col">Cantidad</th>
+
+										<th scope="col" colspan="0">Set</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach items="${listaopot}" var="dt">
+										<%
+											i++;
+										%>
+										<tr>
+											<th scope="row"><%=i%></th>
+											<td>${dt.codigo}</td>
+											<td>${dt.nombre}</td>
+											<td>${dt.cantidad}</td>
+											<td><div class="form-check form-check-inline">
+													<input class="form-check-input" type="checkbox"
+														id="inlineCheckbox1" value="option1"> <label
+														class="form-check-label" for="inlineCheckbox1"></label>
+												</div></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
 		</section>
 		</main>
 	</div>

@@ -28,15 +28,22 @@ public class OpdesdeotController {
 		model.addAttribute("orp", new OrdenProduccion());
 		return mo;
 	}
-	
-	@GetMapping("/detalleop")
+	@GetMapping("/detalleop/{id}")
+	public ModelAndView detalleop(Model model, @PathVariable("id") int idop) {
+		ModelAndView mo = new ModelAndView();
+		mo.setViewName("detalleop");
+		System.out.println("hola ahi estamos ");
+		mo.addObject("listaopot", des.readAll(idop));
+		return mo;
+	}
+	/*@GetMapping("/detalleop")
 	public ModelAndView detalleop(Model model) {
 		ModelAndView mo = new ModelAndView();
 		mo.setViewName("detalleop");
 		System.out.println("registrarion");
 		//mo.addObject("listaDetalle", des.readAll(idd));
 		return mo;
-	}
+	}*/
 	
 	
 	

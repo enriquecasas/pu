@@ -40,9 +40,6 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-
-		//JOptionPane.showMessageDialog(null, "aqui estas");
-		String sql = "DELETE FROM ORDEN_PRODUCCION WHERE IDOP=?";
 		return jdbcTemplate.update("{call SP_ELMINARCASCADAOP(?)}", id);
 	}
 
@@ -61,7 +58,7 @@ public class OrdenProduccionDaoImp implements OrdenProduccionDao {
 	@Override
 	public List<Map<String, Object>> getLast() {
 		// TODO Auto-generated method stub
-		String sql = "select * from ORDEN_PRODUCCION" + " where IDOP = ( select max(IDOP) from ORDEN_PRODUCCION )";
+		String sql = "select * from ORDEN_PRODUCCION  where IDOP = ( select max(IDOP) from ORDEN_PRODUCCION )";
 		return jdbcTemplate.queryForList(sql);
 	}
 
