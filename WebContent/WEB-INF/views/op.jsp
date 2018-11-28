@@ -64,7 +64,8 @@ boto -->
 							<div class="app-breadcrumb breadcrumb " style="">
 								<div class="col-auto">
 									<div class="for-group">
-										<input type="submit" class="btn btn-primary fa fa-plus" value="+*+">
+										<input type="submit" class="btn btn-primary fa fa-plus"
+											value="+*+">
 									</div>
 								</div>
 							</div>
