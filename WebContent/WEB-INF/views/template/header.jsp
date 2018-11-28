@@ -31,7 +31,7 @@
 					<ul id="DosificadoDropdown" class="collapse list-unstyled ">
 						<li><a href="op">Gestionar OP</a></li>
 						<li><a href="opot">OT desde OP</a></li>
-						<li><a href="user">OT's</a></li>
+						<li><a href="ot">OT's</a></li>
 						<li><a href="#">HD</a></li>
 					</ul></li>
 				<li><a href="#AlmacemDropdown" aria-expanded="false"
