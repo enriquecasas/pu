@@ -50,8 +50,7 @@
 		class="pe.edu.upeu.jdbc.daoImp.OrdenTrabajoDaoImp">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
-	
-	<bean id="detalleOtDao"
+	<bean id="detalleotDao"
 		class="pe.edu.upeu.jdbc.daoImp.DetalleOtDaoImp">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
