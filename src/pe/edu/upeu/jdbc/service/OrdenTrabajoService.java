@@ -8,7 +8,7 @@ import pe.edu.upeu.jdbc.entity.OrdenTrabajo;
 public interface OrdenTrabajoService {
 
 	int create(OrdenTrabajo r);
-
+	
 	int update(OrdenTrabajo r);
 
 	int delete(int id);

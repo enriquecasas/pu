@@ -58,8 +58,9 @@ public class OpdesdeotController {
 	
 	@RequestMapping("/registraOT/{id}")
 	public String registraot(Model model, OrdenTrabajo ot, @PathVariable("id") int id, HttpSession session) {
+		System.out.println(session.getAttributeNames());
 		ot = new OrdenTrabajo(id, Integer.parseInt(session.getAttribute("iduser").toString()));
-		ots.create(ot);
+		//ots.create(ot);
 		return "redirect:/main/op";
 	}
 

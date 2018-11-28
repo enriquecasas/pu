@@ -1,5 +1,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <spring:url value="/" var="urlRoot" />
 <!DOCTYPE html>
 <html lang="es">
@@ -64,17 +65,15 @@ boto -->
 					int i = 0;
 				%>
 				<div class="col-md-12">
-					<div class="app-breadcrumb breadcrumb " style="">
+					<div class="app-breadcrumb breadcrumb ">
 						<div class="col-auto">
 							<label>Código: </label> <span>${code}</span>
 						</div>
 						<div class="col-auto">
-							<label>Fecha Actual: <input name="fegene" type="text"
-								value="${fgene}" disabled="disabled"></label> 
+							<label>Fecha Actual: </label><span>${fgene}</span>
 						</div>
 						<div class="col-auto">
-							<label for="fentrega">Fecha Entrega: <input type="text"
-								value="${fentr}" disabled="disabled"></label>
+							<label for="fentrega">Fecha Entrega: </label><span>${fentr}</span>
 						</div>
 					</div>
 				</div>
@@ -99,12 +98,12 @@ boto -->
 										<tr>
 											<th scope="row"><%=i%></th>
 											<td>${dt.codigo}</td>
+											<td hidden="true">${dt.idproducto}</td>
 											<td>${dt.nombre}</td>
 											<td>${dt.cantidad}</td>
-											<td><div class="form-check form-check-inline">
-													<input class="form-check-input" type="checkbox"
-														id="inlineCheckbox1" name="producto" value="${dt.codigo}">
-												</div></td>
+											<td><a href="/pu/main/registrarDOT"
+												style="color: green;"><i class="fa fa-check"
+													aria-hidden="true"></i></a></td>
 										</tr>
 									</c:forEach>
 								</tbody>
