@@ -16,4 +16,12 @@ public ModelAndView ot(Model model) {
 	mo.setViewName("ot");
 	return mo;
 }	
+
+@GetMapping("/detalleot")
+public ModelAndView detalleot(Model model) {
+	ModelAndView mo = new ModelAndView();
+	mo.setViewName("detalleot");
+	return mo;
+}
+
 }
