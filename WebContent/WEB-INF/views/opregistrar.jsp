@@ -99,7 +99,7 @@ boto -->
 										name="cantProducto" placeholder="">
 								</div>
 								<div class="col-auto">
-									<input type="submit" class="btn btn-success" id="cantidad"
+									<input type="submit" class="btn btn-info" id="cantidad"
 										value="Agregar">
 								</div>
 							</div>

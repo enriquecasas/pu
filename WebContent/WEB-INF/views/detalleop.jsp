@@ -110,6 +110,18 @@ boto -->
 								</tbody>
 							</table>
 						</div>
+						<div class="app-breadcrumb breadcrumb " style="">
+							<div class="col-auto">
+								<div class="for-group">
+									<a href="#" class="btn btn-success">Generar OT</a>
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="for-group">
+									<a href="#"class="btn btn-danger" >Cancelar</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 
