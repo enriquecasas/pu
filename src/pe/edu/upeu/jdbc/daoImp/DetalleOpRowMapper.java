@@ -7,11 +7,10 @@ import org.springframework.jdbc.core.RowMapper;
 
 import pe.edu.upeu.jdbc.entity.DetalleOp;
 
-public class DetalleOpRowMapper implements RowMapper<DetalleOp>{
+public class DetalleOpRowMapper implements RowMapper<DetalleOp> {
 
 	@Override
 	public DetalleOp mapRow(ResultSet rs, int rowNum) throws SQLException {
-		// TODO Auto-generated method stub
 		DetalleOp detop = new DetalleOp();
 		detop.setIddetalleop(rs.getInt(1));
 		detop.setIdop(rs.getInt(2));

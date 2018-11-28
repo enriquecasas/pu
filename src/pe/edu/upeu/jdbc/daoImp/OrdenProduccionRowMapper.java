@@ -11,7 +11,6 @@ public class OrdenProduccionRowMapper implements RowMapper<OrdenProduccion>{
 
 	@Override
 	public OrdenProduccion mapRow(ResultSet rs, int rowNum) throws SQLException {
-		// TODO Auto-generated method stub
 		OrdenProduccion op = new OrdenProduccion();
 		op.setIdop(rs.getInt(1));
 		op.setIdusuario(rs.getInt(2));

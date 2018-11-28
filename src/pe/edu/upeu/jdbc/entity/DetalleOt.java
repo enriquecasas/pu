@@ -9,9 +9,25 @@ public class DetalleOt {
 	private int empaque;
 	private int kilo;
 	private int estado;
-	
+	private int idproducto;
+
 	public DetalleOt() {
 		super();
+	}
+
+	public DetalleOt(int idot, double cantidad, int idproducto) {
+		super();
+		this.idot = idot;
+		this.cantidad = cantidad;
+		this.idproducto = idproducto;
+	}
+
+	public int getIdproducto() {
+		return idproducto;
+	}
+
+	public void setIdproducto(int idproducto) {
+		this.idproducto = idproducto;
 	}
 
 	public int getIddetalleot() {
@@ -77,12 +93,5 @@ public class DetalleOt {
 	public void setEstado(int estado) {
 		this.estado = estado;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

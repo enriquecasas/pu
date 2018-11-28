@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import pe.edu.upeu.jdbc.entity.DetalleOt;
 import pe.edu.upeu.jdbc.entity.OrdenProduccion;
 import pe.edu.upeu.jdbc.entity.OrdenTrabajo;
 import pe.edu.upeu.jdbc.service.DetalleOpService;
+import pe.edu.upeu.jdbc.service.DetalleOtService;
 import pe.edu.upeu.jdbc.service.OrdenProduccionService;
 import pe.edu.upeu.jdbc.service.OrdenTrabajoService;
 
@@ -27,6 +29,8 @@ public class OpdesdeotController {
 	private DetalleOpService des;
 	@Autowired
 	private OrdenTrabajoService ots;
+	@Autowired
+	private DetalleOtService dots;
 
 	@GetMapping("/opot")
 	public ModelAndView op(Model model) {
@@ -55,12 +59,13 @@ public class OpdesdeotController {
 	 * System.out.println("registrarion"); //mo.addObject("listaDetalle",
 	 * des.readAll(idd)); return mo; }
 	 */
-	
+
 	@RequestMapping("/registraOT/{id}")
-	public String registraot(Model model, OrdenTrabajo ot, @PathVariable("id") int id, HttpSession session) {
-		System.out.println(session.getAttributeNames());
+	public String registraot(Model model, OrdenTrabajo ot, DetalleOt dot, @PathVariable("id") int id, HttpSession session, HttpServletRequest req) {
 		ot = new OrdenTrabajo(id, Integer.parseInt(session.getAttribute("iduser").toString()));
-		//ots.create(ot);
+		ots.create(ot);
+		dot = new DetalleOt(ots.read(1).getIdot(),Double.parseDouble(req.getParameter("cant")),Integer.parseInt(req.getParameter("idprod")));
+		dots.create(dot);
 		return "redirect:/main/op";
 	}
 

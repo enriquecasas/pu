@@ -60,4 +60,9 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
 	
+	<bean id="detalleotDao"
+		class="pe.edu.upeu.jdbc.daoImp.DetalleotDaoImp">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
 </beans>

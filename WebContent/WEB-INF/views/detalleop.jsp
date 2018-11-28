@@ -105,6 +105,8 @@ boto -->
 												style="color: green;"><i class="fa fa-check"
 													aria-hidden="true"></i></a></td>
 										</tr>
+										<input name="idprod" readonly="readonly"
+											value="${dt.idproducto}">
 									</c:forEach>
 								</tbody>
 							</table>

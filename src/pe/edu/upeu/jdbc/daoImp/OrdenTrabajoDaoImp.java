@@ -47,7 +47,8 @@ public class OrdenTrabajoDaoImp implements OrdenTrabajoDao {
 
 	@Override
 	public OrdenTrabajo read(int id) {
-		return null;
+		String sql = "select * from orden_trabajo where idot = ?";
+		return jdbcTemplate.queryForObject(sql, new OrdenTrabajoRowMapper(), id);
 	}
 
 	@Override

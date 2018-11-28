@@ -9,10 +9,12 @@ import org.springframework.stereotype.Service;
 import pe.edu.upeu.jdbc.dao.DetalleotDao;
 import pe.edu.upeu.jdbc.entity.DetalleOp;
 import pe.edu.upeu.jdbc.service.DetalleOpService;
+
 @Service
 public class DetalleOtServiceImp implements DetalleOpService {
 	@Autowired
 	private DetalleotDao detalleotDao;
+
 	@Override
 	public void saveDetalleOp(DetalleOp d) {
 		// TODO Auto-generated method stub
@@ -22,7 +24,7 @@ public class DetalleOtServiceImp implements DetalleOpService {
 	@Override
 	public List<Map<String, Object>> readAll(int id) {
 		// TODO Auto-generated method stub
-		return detalleotDao.readAll() ;
+		return detalleotDao.readAll();
 	}
 
 	@Override
