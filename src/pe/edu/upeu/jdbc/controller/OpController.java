@@ -82,6 +82,7 @@ public class OpController {
 		det.setIdproducto(Integer.parseInt(request.getParameter("idProducto")));
 		det.setCantidad(Double.parseDouble(request.getParameter("cantProducto")));
 		des.create(det);
+		
 		ModelAndView md = new ModelAndView();
 		md.setViewName("opregistrar");
 		md.addObject("lis", pro.readAll());
